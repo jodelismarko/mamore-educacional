@@ -1,2 +1,2 @@
-# mamore-educacional
-Projeto Mamoré Educacional
+# educacional
+projeto mamore educacional
