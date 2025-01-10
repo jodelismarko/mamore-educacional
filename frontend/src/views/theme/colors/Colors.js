@@ -1,15 +1,63 @@
-import React from 'react'
+import React, { useState } from 'react'
+import ImageGallery from 'react-image-gallery';
+
 import {
+  CModalBody,
+  CModalHeader,
+  CModalFooter,
+  CModalTitle,
   CButton,
   CCard,
+  CModal,
   CCardBody,
   CCardHeader,
   CCardImage,
+  CCarousel, CCarouselItem, CImage,
   CCardText,
   CCardTitle,
   CCol,
   CRow,
 } from '@coreui/react'
+
+const imagess = [
+  {
+    original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
+    thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria1s.jpg'
+  },
+  {
+    original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
+    thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria2s.jpg'
+  },
+  {
+    original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
+    thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria3s.jpg'
+  }
+]
+
+const VerticallyCentered = () => {
+  const [visible, setVisible] = useState(false)
+  return (
+    <>
+      <CButton color="primary" onClick={() => setVisible(!visible)}>
+        Detalhes
+      </CButton>
+      <CModal size="lg" alignment="center" visible={visible} onClose={() => setVisible(false)}>
+        <div style={{ justifyItems:'center'}}>
+          <div style={{background:'black', width:'100%', height:'80%', alignItems:'center'}}>
+              <ImageGallery showPlayButton={false} items={imagess} />
+          </div>
+        </div>
+        <CModalBody>
+          Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+          in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        </CModalBody>
+        <CModalFooter>
+          <CButton color="primary">Comprar</CButton>
+        </CModalFooter>
+      </CModal>
+    </>
+  )
+}
 
 import ReactImg from 'src/assets/images/react.jpg'
 
@@ -32,9 +80,17 @@ const Colors = () => {
                     <CCardText>
                       Teste para card de tprodutos criado para educa&ccedil;&atilde;o mamtem&aacute;tica pela empresa mamor&eacute; educacional
                     </CCardText>
-                    <CButton color="primary" href="#Dashboard">
-                      Go somewhere
-                    </CButton>
+
+                    <div class="container">
+                      <div class="row">
+                        <div class="col">
+                          {VerticallyCentered()}
+                        </div>
+                        <div class="col">
+                          <CButton color="primary">Comprar</CButton>
+                        </div>
+                      </div>
+                    </div>
                   </CCardBody>
                 </CCard>
               </CCardBody>
@@ -49,7 +105,7 @@ const Colors = () => {
                       Some quick example text to build on the card title and make up the bulk of the
                       card&#39;s content.
                     </CCardText>
-                    <CButton color="primary" href="#">
+                    <CButton color="primary" href="#Modals">
                       Go somewhere
                     </CButton>
                   </CCardBody>
