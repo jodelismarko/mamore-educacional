@@ -11,12 +11,18 @@ const _nav = [
     icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
   },
   {
+    component: CNavItem,
+    name: 'Na sala de Aula',
+    to: '/theme/colors',
+    icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+  },
+  {
     component: CNavTitle,
     name: 'Projetos',
   },
   {
     component: CNavItem,
-    name: 'Matematica',
+    name: 'Corte a Laser',
     to: '/theme/colors',
     icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
   },
@@ -39,7 +45,7 @@ const _nav = [
   {
     component: CNavItem,
     name: 'Quem Somos',
-    to: '/notifications/modals',
+    to: '/theme/Quemsomos',
     icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
   },
 ]

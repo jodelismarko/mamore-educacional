@@ -15,22 +15,23 @@ import {
   CCarousel, CCarouselItem, CImage,
   CCardText,
   CCardTitle,
+  CCardSubtitle,
   CCol,
   CRow,
 } from '@coreui/react'
 
 const imagess = [
   {
-    original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
-    thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria1s.jpg'
+    original: 'https://i.ibb.co/1qt07CS/001-800x600.png',
+    thumbnail: 'https://i.ibb.co/PG23JHN/001-80x60.png'
   },
   {
-    original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
-    thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria2s.jpg'
+    original: 'https://i.ibb.co/jDcfpxc/002-800x600.png',
+    thumbnail: 'https://i.ibb.co/Lhk5psG/002-80x60.png'
   },
   {
-    original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
-    thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria3s.jpg'
+    original: 'https://i.ibb.co/1255FN1/003-800x600.png',
+    thumbnail: 'https://i.ibb.co/GM5QP7M/003-80x60.png'
   }
 ]
 
@@ -60,6 +61,7 @@ const VerticallyCentered = () => {
 }
 
 import ReactImg from 'src/assets/images/react.jpg'
+import ReactImg2 from 'src/assets/images/principal.jpg'
 
 const Colors = () => {
   return (
@@ -68,15 +70,16 @@ const Colors = () => {
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardHeader>
-            <strong>Lista de produtos</strong> <small>Examplo</small>
+            <strong>Lista de produtos</strong>
           </CCardHeader>
           <CRow>
             <CCol xs={3}>
               <CCardBody>
                 <CCard style={{ width: '17rem' }}>
-                  <CCardImage orientation="top" src={ReactImg} />
+                  <CCardImage orientation="top" src={ReactImg2} />
                   <CCardBody>
-                    <CCardTitle>Primeiro produto</CCardTitle>
+                    <CCardTitle>Puzzel 3D</CCardTitle>
+                    < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
                     <CCardText>
                       Teste para card de tprodutos criado para educa&ccedil;&atilde;o mamtem&aacute;tica pela empresa mamor&eacute; educacional
                     </CCardText>
