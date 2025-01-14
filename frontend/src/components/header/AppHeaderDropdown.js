@@ -51,105 +51,106 @@ const AppHeaderDropdown = () => {
           <CCloseButton className="text-reset" onClick={() => setVisible(false)} />
         </COffcanvasHeader>
 
-        <CCard >
-          <CRow className="g-0">
-            <CCol md={2}>
-              <CCardImage src={avatar2} />
-            </CCol>
-            <CCol md={6}>
-              <CCardBody>
-                <CCardTitle>Primeiro Produto</CCardTitle>
-              </CCardBody>
-            </CCol>
-            <CCol md={4}>
-              <CCardBody>
-                <CInputGroup >
-                  <CFormInput
-                    placeholder="1"
-                  />
-                  <CButton type="button" color="primary" variant="outline" id="button-addon2">
-                    +
-                  </CButton>
-                </CInputGroup>
-              </CCardBody>
-            </CCol>
-          </CRow>
-        </CCard>
-        <CCard >
-          <CRow className="g-0">
-            <CCol md={2}>
-              <CCardImage src={avatar3} />
-            </CCol>
-            <CCol md={6}>
-              <CCardBody>
-                <CCardTitle>Segundo Produto</CCardTitle>
-              </CCardBody>
-            </CCol>
-            <CCol md={4}>
-              <CCardBody>
-                <CInputGroup >
-                  <CFormInput
-                    placeholder="1"
-                  />
-                  <CButton type="button" color="primary" variant="outline" id="button-addon2">
-                    +
-                  </CButton>
-                </CInputGroup>
-              </CCardBody>
-            </CCol>
-          </CRow>
-        </CCard>
-        <CCard >
-          <CRow className="g-0">
-            <CCol md={2}>
-              <CCardImage src={avatar4} />
-            </CCol>
-            <CCol md={6}>
-              <CCardBody>
-                <CCardTitle>Terceiro Produto</CCardTitle>
-              </CCardBody>
-            </CCol>
-            <CCol md={4}>
-              <CCardBody>
-                <CInputGroup >
-                  <CFormInput
-                    placeholder="1"
-                  />
-                  <CButton type="button" color="primary" variant="outline" id="button-addon2">
-                    +
-                  </CButton>
-                </CInputGroup>
-              </CCardBody>
-            </CCol>
-          </CRow>
-        </CCard>
-        <CCard >
-          <CRow className="g-0">
-            <CCol md={2}>
-              <CCardImage src={avatar5} />
-            </CCol>
-            <CCol md={6}>
-              <CCardBody>
-                <CCardTitle>Quarto Produto</CCardTitle>
-              </CCardBody>
-            </CCol>
-            <CCol md={4}>
-              <CCardBody>
-                <CInputGroup >
-                  <CFormInput
-                    placeholder="1"
-                  />
-                  <CButton type="button" color="primary" variant="outline" id="button-addon2">
-                    +
-                  </CButton>
-                </CInputGroup>
-              </CCardBody>
-            </CCol>
-          </CRow>
-        </CCard>
+        <CContainer style={{padding:5}}>
+          <CCard >
+            <CRow className="g-0">
+              <CCol md={2}>
+                <CCardImage src={avatar2} />
+              </CCol>
+              <CCol md={6}>
+                <CCardBody>
+                  <CCardTitle>Primeiro Produto</CCardTitle>
+                </CCardBody>
+              </CCol>
+              <CCol md={4}>
+                <CCardBody>
+                  <CInputGroup >
+                    <CFormInput
+                      placeholder="1"
+                    />
+                    <CButton type="button" color="primary" variant="outline" id="button-addon2">
+                      +
+                    </CButton>
+                  </CInputGroup>
+                </CCardBody>
+              </CCol>
+            </CRow>
+          </CCard>
+          <CCard >
+            <CRow className="g-0">
+              <CCol md={2}>
+                <CCardImage src={avatar3} />
+              </CCol>
+              <CCol md={6}>
+                <CCardBody>
+                  <CCardTitle>Segundo Produto</CCardTitle>
+                </CCardBody>
+              </CCol>
+              <CCol md={4}>
+                <CCardBody>
+                  <CInputGroup >
+                    <CFormInput
+                      placeholder="1"
+                    />
+                    <CButton type="button" color="primary" variant="outline" id="button-addon2">
+                      +
+                    </CButton>
+                  </CInputGroup>
+                </CCardBody>
+              </CCol>
+            </CRow>
+          </CCard>
+          <CCard >
+            <CRow className="g-0">
+              <CCol md={2}>
+                <CCardImage src={avatar4} />
+              </CCol>
+              <CCol md={6}>
+                <CCardBody>
+                  <CCardTitle>Terceiro Produto</CCardTitle>
+                </CCardBody>
+              </CCol>
+              <CCol md={4}>
+                <CCardBody>
+                  <CInputGroup >
+                    <CFormInput
+                      placeholder="1"
+                    />
+                    <CButton type="button" color="primary" variant="outline" id="button-addon2">
+                      +
+                    </CButton>
+                  </CInputGroup>
+                </CCardBody>
+              </CCol>
+            </CRow>
+          </CCard>
+          <CCard >
+            <CRow className="g-0">
+              <CCol md={2}>
+                <CCardImage src={avatar5} />
+              </CCol>
+              <CCol md={6}>
+                <CCardBody>
+                  <CCardTitle>Quarto Produto</CCardTitle>
+                </CCardBody>
+              </CCol>
+              <CCol md={4}>
+                <CCardBody>
+                  <CInputGroup >
+                    <CFormInput
+                      placeholder="1"
+                    />
+                    <CButton type="button" color="primary" variant="outline" id="button-addon2">
+                      +
+                    </CButton>
+                  </CInputGroup>
+                </CCardBody>
+              </CCol>
+            </CRow>
+          </CCard>
+        </CContainer>
 
-        <CCard>
-          <CCardText>
+          <CContainer style={{ paddingRight: 3, paddingLeft: 5, paddingTop: 50, paddingBottom: 30 }} >
             <CForm className="row gy-2 gx-3 align-items-center">
               <CCol sm={8}>
                 <CFormLabel className="visually-hidden" htmlFor="autoSizingInput">
@@ -169,24 +170,18 @@ const AppHeaderDropdown = () => {
                 </CFormLabel>
                 <CInputGroup>
                   <CInputGroupText>@</CInputGroupText>
-                  <CFormInput id="autoSizingInputGroup" placeholder="Username" />
+                  <CFormInput id="autoSizingInputGroup" placeholder="E-mail" />
                 </CInputGroup>
               </CCol>
             </CForm>
-          </CCardText>
+          </CContainer>
 
 
-          <CCardFooter>
-            <CContainer>
-              <CRow className="justify-content-around">
+            <CContainer style={{width:'80%'}}>
+              <CRow>
                 <CButton color="primary" type="submit">Solicitar Or&ccedil;amento</CButton>
               </CRow>
             </CContainer>
-          </CCardFooter>
-
-
-        </CCard>
-
       </COffcanvas>
     </>
 
