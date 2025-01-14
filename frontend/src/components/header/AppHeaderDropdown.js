@@ -9,13 +9,19 @@ import {
   CCardBody,
   CCardTitle,
   CCardText,
+  CContainer,
   CCard,
   CDropdown,
   CDropdownToggle,
   CCloseButton,
   COffcanvas,
   COffcanvasBody,
+  CCardFooter,
   COffcanvasHeader,
+  CFormCheck,
+  CForm,
+  CFormLabel,
+  CFormSelect,
   COffcanvasTitle,
   CFormInput, CInputGroup, CInputGroupText
 } from '@coreui/react'
@@ -142,27 +148,45 @@ const AppHeaderDropdown = () => {
           </CRow>
         </CCard>
 
-        <COffcanvasBody>
-          <CFormInput
-            id="floatingInput"
-            floatingClassName="mb-3"
-            floatingLabel="Nome"
-            placeholder="Nome Completo"
-          />
-          <CFormInput
-            type="email"
-            id="floatingInput"
-            floatingClassName="mb-3"
-            floatingLabel="E-mail"
-            placeholder="name@example.com"
-          />
-          <CFormInput
-            id="floatingTelefone"
-            floatingLabel="Telefone"
-            placeholder="Telefone"
-          />
-        </COffcanvasBody>
-          <CButton color="primary">Solicitar Or&ccedil;amento</CButton>
+        <CCard>
+          <CCardText>
+            <CForm className="row gy-2 gx-3 align-items-center">
+              <CCol sm={8}>
+                <CFormLabel className="visually-hidden" htmlFor="autoSizingInput">
+                  Nome
+                </CFormLabel>
+                <CFormInput id="autoSizingInput" placeholder="Nome Completo" />
+              </CCol>
+              <CCol sm={4}>
+                <CFormLabel className="visually-hidden" htmlFor="autoSizingInput">
+                  Telefone
+                </CFormLabel>
+                <CFormInput id="autoSizingInput" placeholder="(xx) xxxx-xxxx" />
+              </CCol>
+              <CCol sm={12}>
+                <CFormLabel className="visually-hidden" htmlFor="autoSizingInputGroup">
+                  E-mail
+                </CFormLabel>
+                <CInputGroup>
+                  <CInputGroupText>@</CInputGroupText>
+                  <CFormInput id="autoSizingInputGroup" placeholder="Username" />
+                </CInputGroup>
+              </CCol>
+            </CForm>
+          </CCardText>
+
+
+          <CCardFooter>
+            <CContainer>
+              <CRow className="justify-content-around">
+                <CButton color="primary" type="submit">Solicitar Or&ccedil;amento</CButton>
+              </CRow>
+            </CContainer>
+          </CCardFooter>
+
+
+        </CCard>
+
       </COffcanvas>
     </>
 

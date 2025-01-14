@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ImageGallery from 'react-image-gallery';
+import ReactImg from 'src/assets/images/react.jpg'
 
 import {
   CModalBody,
@@ -26,15 +27,12 @@ import {
 const imagess = [
   {
     original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
-    thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria1s.jpg'
   },
   {
     original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
-    thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria2s.jpg'
   },
   {
     original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
-    thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria3s.jpg'
   }
 ]
 
@@ -48,7 +46,7 @@ const VerticallyCentered = () => {
       <CModal size="lg" alignment="center" visible={visible} onClose={() => setVisible(false)}>
         <div style={{ justifyItems: 'center' }}>
           <div style={{ background: 'black', width: '100%', height: '80%', alignItems: 'center' }}>
-            <ImageGallery showPlayButton={false} items={imagess} />
+            <ImageGallery showPlayButton={false} showBullets={true} items={imagess} />
           </div>
         </div>
         <CModalBody>
@@ -63,37 +61,25 @@ const VerticallyCentered = () => {
   )
 }
 
-import ReactImg from 'src/assets/images/react.jpg'
-
 const Colors = () => {
   return (
     <>
       <CRow xs={{ cols: 1, gutter: 4 }} md={{ cols: 4 }}>
         <CCol xs>
-          <CCard >
+          <CCard>
             <CCardImage orientation="top" src={ReactImg} />
             <CCardBody>
-              <CCardTitle>Primeiro produto</CCardTitle>
+              <CCardTitle>Primeiro Produto</CCardTitle>
               <CCardSubtitle>Cod: 00539</CCardSubtitle>
-                <CRow>
-                  <CCol >{VerticallyCentered()}</CCol>
+              <CCardText />
+            </CCardBody>
+            <CCardFooter>
+              <CContainer>
+                <CRow className="justify-content-around">
+                  <CCol>{VerticallyCentered()}</CCol>
                   <CCol><CButton color="primary">Comprar</CButton></CCol>
                 </CRow>
-            </CCardBody>
-          </CCard>
-        </CCol>
-        <CCol xs>
-          <CCard>
-            <CCardImage orientation="top" src={ReactImg} />
-            <CCardBody>
-              <CCardTitle>Card title</CCardTitle>
-              <CCardText>
-                This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.
-              </CCardText>
-            </CCardBody>
-            <CCardFooter>
-              <small className="text-body-secondary">Last updated 3 mins ago</small>
+              </CContainer>
             </CCardFooter>
           </CCard>
         </CCol>
@@ -101,14 +87,19 @@ const Colors = () => {
           <CCard>
             <CCardImage orientation="top" src={ReactImg} />
             <CCardBody>
-              <CCardTitle>Card title</CCardTitle>
-              <CCardText>
-                This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.
-              </CCardText>
+              <CCardTitle>Segundo Produto</CCardTitle>
+              <CCardSubtitle>Cod: 00540</CCardSubtitle>
+              <CCardText />
             </CCardBody>
             <CCardFooter>
-              <small className="text-body-secondary">Last updated 3 mins ago</small>
+              <CContainer>
+                <CRow className="justify-content-around">
+                  <CCol>
+                    <CCol>{VerticallyCentered()}</CCol>
+                  </CCol>
+                  <CCol><CButton color="primary">Comprar</CButton></CCol>
+                </CRow>
+              </CContainer>
             </CCardFooter>
           </CCard>
         </CCol>
@@ -116,14 +107,19 @@ const Colors = () => {
           <CCard>
             <CCardImage orientation="top" src={ReactImg} />
             <CCardBody>
-              <CCardTitle>Card title</CCardTitle>
-              <CCardText>
-                This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.
-              </CCardText>
+              <CCardTitle>Terceiro Produto</CCardTitle>
+              <CCardSubtitle>Cod: 00541</CCardSubtitle>
+              <CCardText />
             </CCardBody>
             <CCardFooter>
-              <small className="text-body-secondary">Last updated 3 mins ago</small>
+              <CContainer>
+                <CRow className="justify-content-around">
+                  <CCol>
+                    <CCol>{VerticallyCentered()}</CCol>
+                  </CCol>
+                  <CCol><CButton color="primary">Comprar</CButton></CCol>
+                </CRow>
+              </CContainer>
             </CCardFooter>
           </CCard>
         </CCol>
@@ -131,14 +127,21 @@ const Colors = () => {
           <CCard>
             <CCardImage orientation="top" src={ReactImg} />
             <CCardBody>
-              <CCardTitle>Card title</CCardTitle>
-              <CCardText>
-                This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.
-              </CCardText>
+              <CCardTitle>Quarto Produto</CCardTitle>
+              <CCardSubtitle>Cod: 00542</CCardSubtitle>
+              <CCardText />
             </CCardBody>
             <CCardFooter>
-              <small className="text-body-secondary">Last updated 3 mins ago</small>
+              <CContainer>
+                <CRow className="justify-content-around">
+                  <CCol>
+                    <CCol>{VerticallyCentered()}</CCol>
+                  </CCol>
+                  <CCol>
+                    <CButton color="primary">Comprar</CButton>
+                  </CCol>
+                </CRow>
+              </CContainer>
             </CCardFooter>
           </CCard>
         </CCol>
@@ -146,14 +149,17 @@ const Colors = () => {
           <CCard>
             <CCardImage orientation="top" src={ReactImg} />
             <CCardBody>
-              <CCardTitle>Card title</CCardTitle>
-              <CCardText>
-                This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.
-              </CCardText>
+              <CCardTitle>Primeiro Produto</CCardTitle>
+              <CCardSubtitle>Cod: 00539</CCardSubtitle>
+              <CCardText />
             </CCardBody>
             <CCardFooter>
-              <small className="text-body-secondary">Last updated 3 mins ago</small>
+              <CContainer>
+                <CRow className="justify-content-around">
+                  <CCol>{VerticallyCentered()}</CCol>
+                  <CCol><CButton color="primary">Comprar</CButton></CCol>
+                </CRow>
+              </CContainer>
             </CCardFooter>
           </CCard>
         </CCol>
@@ -161,14 +167,19 @@ const Colors = () => {
           <CCard>
             <CCardImage orientation="top" src={ReactImg} />
             <CCardBody>
-              <CCardTitle>Card title</CCardTitle>
-              <CCardText>
-                This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.
-              </CCardText>
+              <CCardTitle>Segundo Produto</CCardTitle>
+              <CCardSubtitle>Cod: 00540</CCardSubtitle>
+              <CCardText />
             </CCardBody>
             <CCardFooter>
-              <small className="text-body-secondary">Last updated 3 mins ago</small>
+              <CContainer>
+                <CRow className="justify-content-around">
+                  <CCol>
+                    <CCol>{VerticallyCentered()}</CCol>
+                  </CCol>
+                  <CCol><CButton color="primary">Comprar</CButton></CCol>
+                </CRow>
+              </CContainer>
             </CCardFooter>
           </CCard>
         </CCol>
@@ -176,14 +187,19 @@ const Colors = () => {
           <CCard>
             <CCardImage orientation="top" src={ReactImg} />
             <CCardBody>
-              <CCardTitle>Card title</CCardTitle>
-              <CCardText>
-                This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.
-              </CCardText>
+              <CCardTitle>Terceiro Produto</CCardTitle>
+              <CCardSubtitle>Cod: 00541</CCardSubtitle>
+              <CCardText />
             </CCardBody>
             <CCardFooter>
-              <small className="text-body-secondary">Last updated 3 mins ago</small>
+              <CContainer>
+                <CRow className="justify-content-around">
+                  <CCol>
+                    <CCol>{VerticallyCentered()}</CCol>
+                  </CCol>
+                  <CCol><CButton color="primary">Comprar</CButton></CCol>
+                </CRow>
+              </CContainer>
             </CCardFooter>
           </CCard>
         </CCol>
@@ -191,14 +207,21 @@ const Colors = () => {
           <CCard>
             <CCardImage orientation="top" src={ReactImg} />
             <CCardBody>
-              <CCardTitle>Card title</CCardTitle>
-              <CCardText>
-                This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.
-              </CCardText>
+              <CCardTitle>Quarto Produto</CCardTitle>
+              <CCardSubtitle>Cod: 00542</CCardSubtitle>
+              <CCardText />
             </CCardBody>
             <CCardFooter>
-              <small className="text-body-secondary">Last updated 3 mins ago</small>
+              <CContainer>
+                <CRow className="justify-content-around">
+                  <CCol>
+                    <CCol>{VerticallyCentered()}</CCol>
+                  </CCol>
+                  <CCol>
+                    <CButton color="primary">Comprar</CButton>
+                  </CCol>
+                </CRow>
+              </CContainer>
             </CCardFooter>
           </CCard>
         </CCol>
@@ -206,14 +229,17 @@ const Colors = () => {
           <CCard>
             <CCardImage orientation="top" src={ReactImg} />
             <CCardBody>
-              <CCardTitle>Card title</CCardTitle>
-              <CCardText>
-                This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.
-              </CCardText>
+              <CCardTitle>Primeiro Produto</CCardTitle>
+              <CCardSubtitle>Cod: 00539</CCardSubtitle>
+              <CCardText />
             </CCardBody>
             <CCardFooter>
-              <small className="text-body-secondary">Last updated 3 mins ago</small>
+              <CContainer>
+                <CRow className="justify-content-around">
+                  <CCol>{VerticallyCentered()}</CCol>
+                  <CCol><CButton color="primary">Comprar</CButton></CCol>
+                </CRow>
+              </CContainer>
             </CCardFooter>
           </CCard>
         </CCol>
@@ -221,14 +247,19 @@ const Colors = () => {
           <CCard>
             <CCardImage orientation="top" src={ReactImg} />
             <CCardBody>
-              <CCardTitle>Card title</CCardTitle>
-              <CCardText>
-                This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.
-              </CCardText>
+              <CCardTitle>Segundo Produto</CCardTitle>
+              <CCardSubtitle>Cod: 00540</CCardSubtitle>
+              <CCardText />
             </CCardBody>
             <CCardFooter>
-              <small className="text-body-secondary">Last updated 3 mins ago</small>
+              <CContainer>
+                <CRow className="justify-content-around">
+                  <CCol>
+                    <CCol>{VerticallyCentered()}</CCol>
+                  </CCol>
+                  <CCol><CButton color="primary">Comprar</CButton></CCol>
+                </CRow>
+              </CContainer>
             </CCardFooter>
           </CCard>
         </CCol>
@@ -236,14 +267,121 @@ const Colors = () => {
           <CCard>
             <CCardImage orientation="top" src={ReactImg} />
             <CCardBody>
-              <CCardTitle>Card title</CCardTitle>
-              <CCardText>
-                This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.
-              </CCardText>
+              <CCardTitle>Terceiro Produto</CCardTitle>
+              <CCardSubtitle>Cod: 00541</CCardSubtitle>
+              <CCardText />
             </CCardBody>
             <CCardFooter>
-              <small className="text-body-secondary">Last updated 3 mins ago</small>
+              <CContainer>
+                <CRow className="justify-content-around">
+                  <CCol>
+                    <CCol>{VerticallyCentered()}</CCol>
+                  </CCol>
+                  <CCol><CButton color="primary">Comprar</CButton></CCol>
+                </CRow>
+              </CContainer>
+            </CCardFooter>
+          </CCard>
+        </CCol>
+        <CCol xs>
+          <CCard>
+            <CCardImage orientation="top" src={ReactImg} />
+            <CCardBody>
+              <CCardTitle>Quarto Produto</CCardTitle>
+              <CCardSubtitle>Cod: 00542</CCardSubtitle>
+              <CCardText />
+            </CCardBody>
+            <CCardFooter>
+              <CContainer>
+                <CRow className="justify-content-around">
+                  <CCol>
+                    <CCol>{VerticallyCentered()}</CCol>
+                  </CCol>
+                  <CCol>
+                    <CButton color="primary">Comprar</CButton>
+                  </CCol>
+                </CRow>
+              </CContainer>
+            </CCardFooter>
+          </CCard>
+        </CCol>
+        <CCol xs>
+          <CCard>
+            <CCardImage orientation="top" src={ReactImg} />
+            <CCardBody>
+              <CCardTitle>Primeiro Produto</CCardTitle>
+              <CCardSubtitle>Cod: 00539</CCardSubtitle>
+              <CCardText />
+            </CCardBody>
+            <CCardFooter>
+              <CContainer>
+                <CRow className="justify-content-around">
+                  <CCol>{VerticallyCentered()}</CCol>
+                  <CCol><CButton color="primary">Comprar</CButton></CCol>
+                </CRow>
+              </CContainer>
+            </CCardFooter>
+          </CCard>
+        </CCol>
+        <CCol xs>
+          <CCard>
+            <CCardImage orientation="top" src={ReactImg} />
+            <CCardBody>
+              <CCardTitle>Segundo Produto</CCardTitle>
+              <CCardSubtitle>Cod: 00540</CCardSubtitle>
+              <CCardText />
+            </CCardBody>
+            <CCardFooter>
+              <CContainer>
+                <CRow className="justify-content-around">
+                  <CCol>
+                    <CCol>{VerticallyCentered()}</CCol>
+                  </CCol>
+                  <CCol><CButton color="primary">Comprar</CButton></CCol>
+                </CRow>
+              </CContainer>
+            </CCardFooter>
+          </CCard>
+        </CCol>
+        <CCol xs>
+          <CCard>
+            <CCardImage orientation="top" src={ReactImg} />
+            <CCardBody>
+              <CCardTitle>Terceiro Produto</CCardTitle>
+              <CCardSubtitle>Cod: 00541</CCardSubtitle>
+              <CCardText />
+            </CCardBody>
+            <CCardFooter>
+              <CContainer>
+                <CRow className="justify-content-around">
+                  <CCol>
+                    <CCol>{VerticallyCentered()}</CCol>
+                  </CCol>
+                  <CCol><CButton color="primary">Comprar</CButton></CCol>
+                </CRow>
+              </CContainer>
+            </CCardFooter>
+          </CCard>
+        </CCol>
+        <CCol xs>
+          <CCard>
+            <CCardImage orientation="top" src={ReactImg} />
+            <CCardBody>
+              <CCardTitle>Quarto Produto</CCardTitle>
+              <CCardSubtitle>Cod: 00542</CCardSubtitle>
+              <CCardText />
+            </CCardBody>
+            <CCardFooter>
+              <CContainer>
+                <CRow className="justify-content-around">
+                  <CCol>
+                    <CCol>{VerticallyCentered()}</CCol>
+                  </CCol>
+                  <CCol>
+                    <CButton color="primary">Comprar</CButton>
+                  </CCol>
+                </CRow>
+              </CContainer>
             </CCardFooter>
           </CCard>
         </CCol>
