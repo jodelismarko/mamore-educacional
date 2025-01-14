@@ -46,8 +46,8 @@ const AppHeaderDropdown = () => {
       </CDropdown>
 
       <COffcanvas placement="end" visible={visible} onHide={() => setVisible(false)}>
-        <COffcanvasHeader className="justify-content-md-end">
-          <COffcanvasTitle>Lista de compra</COffcanvasTitle>
+        <COffcanvasHeader className="justify-content-md-between">
+          <COffcanvasTitle>Lista de produtos</COffcanvasTitle>
           <CCloseButton className="text-reset" onClick={() => setVisible(false)} />
         </COffcanvasHeader>
 
@@ -179,7 +179,7 @@ const AppHeaderDropdown = () => {
 
             <CContainer style={{width:'80%'}}>
               <CRow>
-                <CButton color="primary" type="submit">Solicitar Or&ccedil;amento</CButton>
+                <CButton onClick={() => setVisible(false)} color="primary" type="submit">Solicitar Or&ccedil;amento</CButton>
               </CRow>
             </CContainer>
       </COffcanvas>
