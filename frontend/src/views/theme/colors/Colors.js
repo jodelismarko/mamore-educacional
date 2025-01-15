@@ -75,32 +75,30 @@ const Colors = () => {
           <CRow>
             <CCol xs={3}>
               <CCardBody>
-                <CCard style={{ width: '17rem' }}>
+                <CCard style={{ width: '15rem' }}>
                   <CCardImage orientation="top" src={ReactImg2} />
                   <CCardBody>
                     <CCardTitle>Puzzel 3D</CCardTitle>
                     < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
-                    <CCardText>
-                      Teste para card de tprodutos criado para educa&ccedil;&atilde;o mamtem&aacute;tica pela empresa mamor&eacute; educacional
-                    </CCardText>
-
-                    <div class="container">
-                      <div class="row">
-                        <div class="col">
+                  
+                     <div class="card-footer bg-transparent border-success">
+                     <CRow>
+                      <CCol xs={6}>
                           {VerticallyCentered()}
-                        </div>
-                        <div class="col">
-                          <CButton color="primary">Comprar</CButton>
-                        </div>
-                      </div>
-                    </div>
+                      </CCol>
+                      <CCol xs={6}>
+                        <CButton color="primary">Comprar</CButton>
+                      </CCol>
+                    </CRow>
+                     </div>
+                    
                   </CCardBody>
                 </CCard>
               </CCardBody>
             </CCol>
             <CCol xs={3}>
               <CCardBody>
-                <CCard style={{ width: '17rem' }}>
+                <CCard style={{ width: '14rem' }}>
                   <CCardImage orientation="top" src={ReactImg} />
                   <CCardBody>
                     <CCardTitle>Segundo produto</CCardTitle>
@@ -117,7 +115,7 @@ const Colors = () => {
             </CCol>
             <CCol xs={3}>
               <CCardBody>
-                <CCard style={{ width: '17rem' }}>
+                <CCard style={{ width: '14rem' }}>
                   <CCardImage orientation="top" src={ReactImg} />
                   <CCardBody>
                     <CCardTitle>Terceiro produto</CCardTitle>
@@ -134,10 +132,10 @@ const Colors = () => {
             </CCol>
             <CCol xs={3}>
               <CCardBody>
-                <CCard style={{ width: '17rem' }}>
+                <CCard style={{ width: '14rem' }}>
                   <CCardImage orientation="top" src={ReactImg} />
                   <CCardBody>
-                    <CCardTitle>Quarto produto</CCardTitle>
+                    <CCardTitle>Terceiro produto</CCardTitle>
                     <CCardText>
                       Some quick example text to build on the card title and make up the bulk of the
                       card&#39;s content.
@@ -153,7 +151,7 @@ const Colors = () => {
           <CRow>
             <CCol xs={3}>
               <CCardBody>
-                <CCard style={{ width: '17rem' }}>
+                <CCard style={{ width: '14rem' }}>
                   <CCardImage orientation="top" src={ReactImg} />
                   <CCardBody>
                     <CCardTitle>Card title</CCardTitle>
@@ -170,7 +168,7 @@ const Colors = () => {
             </CCol>
             <CCol xs={3}>
               <CCardBody>
-                <CCard style={{ width: '17rem' }}>
+                <CCard style={{ width: '14rem' }}>
                   <CCardImage orientation="top" src={ReactImg} />
                   <CCardBody>
                     <CCardTitle>Card title</CCardTitle>
@@ -187,7 +185,7 @@ const Colors = () => {
             </CCol>
             <CCol xs={3}>
               <CCardBody>
-                <CCard style={{ width: '17rem' }}>
+                <CCard style={{ width: '14rem' }}>
                   <CCardImage orientation="top" src={ReactImg} />
                   <CCardBody>
                     <CCardTitle>Card title</CCardTitle>
@@ -204,7 +202,7 @@ const Colors = () => {
             </CCol>
             <CCol xs={3}>
               <CCardBody>
-                <CCard style={{ width: '17rem' }}>
+                <CCard style={{ width: '14rem' }}>
                   <CCardImage orientation="top" src={ReactImg} />
                   <CCardBody>
                     <CCardTitle>Card title</CCardTitle>

@@ -36,7 +36,8 @@ const Colors = () => {
                   <CCardBody>
                     <CCardTitle>Mamoré Educacional</CCardTitle>
                     <CCardText>
-                    Bem-vindo à Mamoré Educacional, onde transformamos a educação matemática em experiências tangíveis e significativas. Nossa missão é promover o aprendizado através de materiais manipulativos que despertam a curiosidade, estimulam o raciocínio lógico e tornam a Matemática acessível e prazerosa para todos os estudantes.
+                   
+                    <p class="lh-base">Bem-vindo à Mamoré Educacional, onde transformamos a educação matemática em experiências tangíveis e significativas. Nossa missão é promover o aprendizado através de materiais manipulativos que despertam a curiosidade, estimulam o raciocínio lógico e tornam a Matemática acessível e prazerosa para todos os estudantes.
 
 Desde nossa fundação, acreditamos que aprender Matemática pode e deve ser uma experiência dinâmica. Por isso, nos dedicamos à criação de ferramentas pedagógicas inovadoras que ajudam professores a transformar suas aulas e estudantes a construir conhecimentos sólidos e duradouros.
 
@@ -44,7 +45,9 @@ Nosso time é composto por especialistas em educação, design e Matemática, co
 
 Mais do que produtos, oferecemos parcerias para o crescimento educacional. Nosso compromisso vai além de fornecer materiais; queremos inspirar professores, engajar alunos e contribuir para a formação de gerações mais confiantes e preparadas no mundo dos números.
 
-Junte-se a nós nessa jornada de transformação educacional. Venha conhecer nossos produtos e descobrir como a Mamoré Educacional pode fazer a diferença na sua escola, na sua sala de aula e, acima de tudo, na vida dos seus alunos.
+Junte-se a nós nessa jornada de transformação educacional. Venha conhecer nossos produtos e descobrir como a Mamoré Educacional pode fazer a diferença na sua escola, na sua sala de aula e, acima de tudo, na vida dos seus alunos.</p>
+
+                    
                     </CCardText>
                     </CCardBody>
                 </CCard>
