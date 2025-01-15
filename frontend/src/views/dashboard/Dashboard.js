@@ -1,42 +1,20 @@
-import React, { useState } from 'react'
-import ImageGallery from 'react-image-gallery';
+import React from 'react'
 import ReactImg from 'src/assets/images/react.jpg'
 import VerticallyCentered from './Modal'
 import {
-  CModalBody,
   CContainer,
-  CModalHeader,
   CCardSubtitle,
-  CModalFooter,
-  CCardFooter,
-  CModalTitle,
   CButton,
   CCard,
-  CCardGroup,
-  CModal,
   CCardBody,
   CCardHeader,
   CCardImage,
-  CCarousel, CCarouselItem, CImage,
   CCardText,
   CCardTitle,
   CCol,
   CRow,
+  CCardFooter,
 } from '@coreui/react'
-
-const imagess = [
-  {
-    original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
-  },
-  {
-    original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
-  },
-  {
-    original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
-  }
-]
-
-
 
 const Colors = () => {
   return (
@@ -47,357 +25,282 @@ const Colors = () => {
             <CCardHeader>
               <strong>Lista de produtos</strong>
             </CCardHeader>
-            <CRow>
-              <CCol xs={3}>
-                <CCardBody>
-                  <CCard style={{ width: '17rem' }}>
+            <CContainer>
+              <CRow xs={{ cols: 1 }} sm={{ cols: 2 }} md={{ cols: 4 }} style={{ paddingTop: 30, paddingBottom: 50 }}>
+                <CCol style={{paddingTop:10,paddingBottom:10}}>
+                  <CCard>
                     <CCardImage orientation="top" src={ReactImg} />
                     <CCardBody>
                       <CCardTitle>Puzzel 3D</CCardTitle>
                       < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
-                      <CCardText>
-                        Teste para card de tprodutos criado para educa&ccedil;&atilde;o mamtem&aacute;tica pela empresa mamor&eacute; educacional
-                      </CCardText>
-                      <CContainer>
-                        {VerticallyCentered()}
-                        <CButton color="primary">Comprar</CButton>
-                      </CContainer>
+                      <CCardText />
                     </CCardBody>
+                    <CCardFooter>
+                      <CRow xs={{ cols: 2 }}>
+                        <CCol>{VerticallyCentered()}</CCol>
+                        <CCol><CButton color="primary">Comprar</CButton></CCol>
+                      </CRow>
+                    </CCardFooter>
                   </CCard>
-                </CCardBody>
-              </CCol>
-              <CCol xs={3}>
-                <CCardBody>
-                  <CCard style={{ width: '17rem' }}>
+                </CCol>
+                <CCol style={{paddingTop:10,paddingBottom:10}}>
+                  <CCard>
                     <CCardImage orientation="top" src={ReactImg} />
                     <CCardBody>
-                      <CCardTitle>Segundo produto</CCardTitle>
-                      <CCardText>
-                        Some quick example text to build on the card title and make up the bulk of the
-                        card&#39;s content.
-                      </CCardText>
-                      <CButton color="primary" href="#Modals">
-                        Go somewhere
-                      </CButton>
+                      <CCardTitle>Puzzel 3D</CCardTitle>
+                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
+                      <CCardText />
                     </CCardBody>
+                    <CCardFooter>
+                      <CRow xs={{ cols: 2 }}>
+                        <CCol>{VerticallyCentered()}</CCol>
+                        <CCol><CButton color="primary">Comprar</CButton></CCol>
+                      </CRow>
+                    </CCardFooter>
                   </CCard>
-                </CCardBody>
-              </CCol>
-              <CCol xs={3}>
-                <CCardBody>
-                  <CCard style={{ width: '17rem' }}>
+                </CCol>
+                <CCol style={{paddingTop:10,paddingBottom:10}}>
+                  <CCard>
                     <CCardImage orientation="top" src={ReactImg} />
                     <CCardBody>
-                      <CCardTitle>Terceiro produto</CCardTitle>
-                      <CCardText>
-                        Some quick example text to build on the card title and make up the bulk of the
-                        card&#39;s content.
-                      </CCardText>
-                      <CButton color="primary" href="#">
-                        Go somewhere
-                      </CButton>
+                      <CCardTitle>Puzzel 3D</CCardTitle>
+                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
+                      <CCardText />
                     </CCardBody>
+                    <CCardFooter>
+                      <CRow xs={{ cols: 2 }}>
+                        <CCol>{VerticallyCentered()}</CCol>
+                        <CCol><CButton color="primary">Comprar</CButton></CCol>
+                      </CRow>
+                    </CCardFooter>
                   </CCard>
-                </CCardBody>
-              </CCol>
-              <CCol xs={3}>
-                <CCardBody>
-                  <CCard style={{ width: '17rem' }}>
+                </CCol>
+                <CCol style={{paddingTop:10,paddingBottom:10}}>
+                  <CCard>
                     <CCardImage orientation="top" src={ReactImg} />
                     <CCardBody>
-                      <CCardTitle>Quarto produto</CCardTitle>
-                      <CCardText>
-                        Some quick example text to build on the card title and make up the bulk of the
-                        card&#39;s content.
-                      </CCardText>
-                      <CButton color="primary" href="#">
-                        Go somewhere
-                      </CButton>
+                      <CCardTitle>Puzzel 3D</CCardTitle>
+                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
+                      <CCardText />
                     </CCardBody>
+                    <CCardFooter>
+                      <CRow xs={{ cols: 2 }}>
+                        <CCol>{VerticallyCentered()}</CCol>
+                        <CCol><CButton color="primary">Comprar</CButton></CCol>
+                      </CRow>
+                    </CCardFooter>
                   </CCard>
-                </CCardBody>
-              </CCol>
-            </CRow>
-            <CRow>
-              <CCol xs={3}>
-                <CCardBody>
-                  <CCard style={{ width: '17rem' }}>
+                </CCol>
+                <CCol style={{paddingTop:10,paddingBottom:10}}>
+                  <CCard>
                     <CCardImage orientation="top" src={ReactImg} />
                     <CCardBody>
-                      <CCardTitle>Card title</CCardTitle>
-                      <CCardText>
-                        Some quick example text to build on the card title and make up the bulk of the
-                        card&#39;s content.
-                      </CCardText>
-                      <CButton color="primary" href="#">
-                        Go somewhere
-                      </CButton>
+                      <CCardTitle>Puzzel 3D</CCardTitle>
+                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
+                      <CCardText />
                     </CCardBody>
+                    <CCardFooter>
+                      <CRow xs={{ cols: 2 }}>
+                        <CCol>{VerticallyCentered()}</CCol>
+                        <CCol><CButton color="primary">Comprar</CButton></CCol>
+                      </CRow>
+                    </CCardFooter>
                   </CCard>
-                </CCardBody>
-              </CCol>
-              <CCol xs={3}>
-                <CCardBody>
-                  <CCard style={{ width: '17rem' }}>
+                </CCol>
+                <CCol style={{paddingTop:10,paddingBottom:10}}>
+                  <CCard>
                     <CCardImage orientation="top" src={ReactImg} />
                     <CCardBody>
-                      <CCardTitle>Card title</CCardTitle>
-                      <CCardText>
-                        Some quick example text to build on the card title and make up the bulk of the
-                        card&#39;s content.
-                      </CCardText>
-                      <CButton color="primary" href="#">
-                        Go somewhere
-                      </CButton>
+                      <CCardTitle>Puzzel 3D</CCardTitle>
+                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
+                      <CCardText />
                     </CCardBody>
+                    <CCardFooter>
+                      <CRow xs={{ cols: 2 }}>
+                        <CCol>{VerticallyCentered()}</CCol>
+                        <CCol><CButton color="primary">Comprar</CButton></CCol>
+                      </CRow>
+                    </CCardFooter>
                   </CCard>
-                </CCardBody>
-              </CCol>
-              <CCol xs={3}>
-                <CCardBody>
-                  <CCard style={{ width: '17rem' }}>
+                </CCol>
+                <CCol style={{paddingTop:10,paddingBottom:10}}>
+                  <CCard>
                     <CCardImage orientation="top" src={ReactImg} />
                     <CCardBody>
-                      <CCardTitle>Card title</CCardTitle>
-                      <CCardText>
-                        Some quick example text to build on the card title and make up the bulk of the
-                        card&#39;s content.
-                      </CCardText>
-                      <CButton color="primary" href="#">
-                        Go somewhere
-                      </CButton>
+                      <CCardTitle>Puzzel 3D</CCardTitle>
+                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
+                      <CCardText />
                     </CCardBody>
+                    <CCardFooter>
+                      <CRow xs={{ cols: 2 }}>
+                        <CCol>{VerticallyCentered()}</CCol>
+                        <CCol><CButton color="primary">Comprar</CButton></CCol>
+                      </CRow>
+                    </CCardFooter>
                   </CCard>
-                </CCardBody>
-              </CCol>
-              <CCol xs={3}>
-                <CCardBody>
-                  <CCard style={{ width: '17rem' }}>
+                </CCol>
+                <CCol style={{paddingTop:10,paddingBottom:10}}>
+                  <CCard>
                     <CCardImage orientation="top" src={ReactImg} />
                     <CCardBody>
-                      <CCardTitle>Card title</CCardTitle>
-                      <CCardText>
-                        Some quick example text to build on the card title and make up the bulk of the
-                        card&#39;s content.
-                      </CCardText>
-                      <CButton color="primary" href="#">
-                        Go somewhere
-                      </CButton>
+                      <CCardTitle>Puzzel 3D</CCardTitle>
+                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
+                      <CCardText />
                     </CCardBody>
+                    <CCardFooter>
+                      <CRow xs={{ cols: 2 }}>
+                        <CCol>{VerticallyCentered()}</CCol>
+                        <CCol><CButton color="primary">Comprar</CButton></CCol>
+                      </CRow>
+                    </CCardFooter>
                   </CCard>
-                </CCardBody>
-              </CCol>
-            </CRow>
-            <CRow>
-              <CCol xs={3}>
-                <CCardBody>
-                  <CCard style={{ width: '17rem' }}>
+                </CCol>
+                <CCol style={{paddingTop:10,paddingBottom:10}}>
+                  <CCard>
                     <CCardImage orientation="top" src={ReactImg} />
                     <CCardBody>
-                      <CCardTitle>Card title</CCardTitle>
-                      <CCardText>
-                        Some quick example text to build on the card title and make up the bulk of the
-                        card&#39;s content.
-                      </CCardText>
-                      <CButton color="primary" href="#">
-                        Go somewhere
-                      </CButton>
+                      <CCardTitle>Puzzel 3D</CCardTitle>
+                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
+                      <CCardText />
                     </CCardBody>
+                    <CCardFooter>
+                      <CRow xs={{ cols: 2 }}>
+                        <CCol>{VerticallyCentered()}</CCol>
+                        <CCol><CButton color="primary">Comprar</CButton></CCol>
+                      </CRow>
+                    </CCardFooter>
                   </CCard>
-                </CCardBody>
-              </CCol>
-              <CCol xs={3}>
-                <CCardBody>
-                  <CCard style={{ width: '17rem' }}>
+                </CCol>
+                <CCol style={{paddingTop:10,paddingBottom:10}}>
+                  <CCard>
                     <CCardImage orientation="top" src={ReactImg} />
                     <CCardBody>
-                      <CCardTitle>Card title</CCardTitle>
-                      <CCardText>
-                        Some quick example text to build on the card title and make up the bulk of the
-                        card&#39;s content.
-                      </CCardText>
-                      <CButton color="primary" href="#">
-                        Go somewhere
-                      </CButton>
+                      <CCardTitle>Puzzel 3D</CCardTitle>
+                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
+                      <CCardText />
                     </CCardBody>
+                    <CCardFooter>
+                      <CRow xs={{ cols: 2 }}>
+                        <CCol>{VerticallyCentered()}</CCol>
+                        <CCol><CButton color="primary">Comprar</CButton></CCol>
+                      </CRow>
+                    </CCardFooter>
                   </CCard>
-                </CCardBody>
-              </CCol>
-              <CCol xs={3}>
-                <CCardBody>
-                  <CCard style={{ width: '17rem' }}>
+                </CCol>
+                <CCol style={{paddingTop:10,paddingBottom:10}}>
+                  <CCard>
                     <CCardImage orientation="top" src={ReactImg} />
                     <CCardBody>
-                      <CCardTitle>Card title</CCardTitle>
-                      <CCardText>
-                        Some quick example text to build on the card title and make up the bulk of the
-                        card&#39;s content.
-                      </CCardText>
-                      <CButton color="primary" href="#">
-                        Go somewhere
-                      </CButton>
+                      <CCardTitle>Puzzel 3D</CCardTitle>
+                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
+                      <CCardText />
                     </CCardBody>
+                    <CCardFooter>
+                      <CRow xs={{ cols: 2 }}>
+                        <CCol>{VerticallyCentered()}</CCol>
+                        <CCol><CButton color="primary">Comprar</CButton></CCol>
+                      </CRow>
+                    </CCardFooter>
                   </CCard>
-                </CCardBody>
-              </CCol>
-              <CCol xs={3}>
-                <CCardBody>
-                  <CCard style={{ width: '17rem' }}>
+                </CCol>
+                <CCol style={{paddingTop:10,paddingBottom:10}}>
+                  <CCard>
                     <CCardImage orientation="top" src={ReactImg} />
                     <CCardBody>
-                      <CCardTitle>Card title</CCardTitle>
-                      <CCardText>
-                        Some quick example text to build on the card title and make up the bulk of the
-                        card&#39;s content.
-                      </CCardText>
-                      <CButton color="primary" href="#">
-                        Go somewhere
-                      </CButton>
+                      <CCardTitle>Puzzel 3D</CCardTitle>
+                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
+                      <CCardText />
                     </CCardBody>
+                    <CCardFooter>
+                      <CRow xs={{ cols: 2 }}>
+                        <CCol>{VerticallyCentered()}</CCol>
+                        <CCol><CButton color="primary">Comprar</CButton></CCol>
+                      </CRow>
+                    </CCardFooter>
                   </CCard>
-                </CCardBody>
-              </CCol>
-            </CRow>
-            <CRow>
-              <CCol xs={3}>
-                <CCardBody>
-                  <CCard style={{ width: '17rem' }}>
+                </CCol>
+                <CCol style={{paddingTop:10,paddingBottom:10}}>
+                  <CCard>
                     <CCardImage orientation="top" src={ReactImg} />
                     <CCardBody>
-                      <CCardTitle>Card title</CCardTitle>
-                      <CCardText>
-                        Some quick example text to build on the card title and make up the bulk of the
-                        card&#39;s content.
-                      </CCardText>
-                      <CButton color="primary" href="#">
-                        Go somewhere
-                      </CButton>
+                      <CCardTitle>Puzzel 3D</CCardTitle>
+                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
+                      <CCardText />
                     </CCardBody>
+                    <CCardFooter>
+                      <CRow xs={{ cols: 2 }}>
+                        <CCol>{VerticallyCentered()}</CCol>
+                        <CCol><CButton color="primary">Comprar</CButton></CCol>
+                      </CRow>
+                    </CCardFooter>
                   </CCard>
-                </CCardBody>
-              </CCol>
-              <CCol xs={3}>
-                <CCardBody>
-                  <CCard style={{ width: '17rem' }}>
+                </CCol>
+                <CCol style={{paddingTop:10,paddingBottom:10}}>
+                  <CCard>
                     <CCardImage orientation="top" src={ReactImg} />
                     <CCardBody>
-                      <CCardTitle>Card title</CCardTitle>
-                      <CCardText>
-                        Some quick example text to build on the card title and make up the bulk of the
-                        card&#39;s content.
-                      </CCardText>
-                      <CButton color="primary" href="#">
-                        Go somewhere
-                      </CButton>
+                      <CCardTitle>Puzzel 3D</CCardTitle>
+                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
+                      <CCardText />
                     </CCardBody>
+                    <CCardFooter>
+                      <CRow xs={{ cols: 2 }}>
+                        <CCol>{VerticallyCentered()}</CCol>
+                        <CCol><CButton color="primary">Comprar</CButton></CCol>
+                      </CRow>
+                    </CCardFooter>
                   </CCard>
-                </CCardBody>
-              </CCol>
-              <CCol xs={3}>
-                <CCardBody>
-                  <CCard style={{ width: '17rem' }}>
+                </CCol>
+                <CCol style={{paddingTop:10,paddingBottom:10}}>
+                  <CCard>
                     <CCardImage orientation="top" src={ReactImg} />
                     <CCardBody>
-                      <CCardTitle>Card title</CCardTitle>
-                      <CCardText>
-                        Some quick example text to build on the card title and make up the bulk of the
-                        card&#39;s content.
-                      </CCardText>
-                      <CButton color="primary" href="#">
-                        Go somewhere
-                      </CButton>
+                      <CCardTitle>Puzzel 3D</CCardTitle>
+                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
+                      <CCardText />
                     </CCardBody>
+                    <CCardFooter>
+                      <CRow xs={{ cols: 2 }}>
+                        <CCol>{VerticallyCentered()}</CCol>
+                        <CCol><CButton color="primary">Comprar</CButton></CCol>
+                      </CRow>
+                    </CCardFooter>
                   </CCard>
-                </CCardBody>
-              </CCol>
-              <CCol xs={3}>
-                <CCardBody>
-                  <CCard style={{ width: '17rem' }}>
+                </CCol>
+                <CCol style={{paddingTop:10,paddingBottom:10}}>
+                  <CCard>
                     <CCardImage orientation="top" src={ReactImg} />
                     <CCardBody>
-                      <CCardTitle>Card title</CCardTitle>
-                      <CCardText>
-                        Some quick example text to build on the card title and make up the bulk of the
-                        card&#39;s content.
-                      </CCardText>
-                      <CButton color="primary" href="#">
-                        Go somewhere
-                      </CButton>
+                      <CCardTitle>Puzzel 3D</CCardTitle>
+                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
+                      <CCardText />
                     </CCardBody>
+                    <CCardFooter>
+                      <CRow xs={{ cols: 2 }}>
+                        <CCol>{VerticallyCentered()}</CCol>
+                        <CCol><CButton color="primary">Comprar</CButton></CCol>
+                      </CRow>
+                    </CCardFooter>
                   </CCard>
-                </CCardBody>
-              </CCol>
-            </CRow>
-            <CRow>
-              <CCol xs={3}>
-                <CCardBody>
-                  <CCard style={{ width: '17rem' }}>
+                </CCol>
+                <CCol style={{paddingTop:10,paddingBottom:10}}>
+                  <CCard>
                     <CCardImage orientation="top" src={ReactImg} />
                     <CCardBody>
-                      <CCardTitle>Card title</CCardTitle>
-                      <CCardText>
-                        Some quick example text to build on the card title and make up the bulk of the
-                        card&#39;s content.
-                      </CCardText>
-                      <CButton color="primary" href="#">
-                        Go somewhere
-                      </CButton>
+                      <CCardTitle>Puzzel 3D</CCardTitle>
+                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
+                      <CCardText />
                     </CCardBody>
+                    <CCardFooter>
+                      <CRow xs={{ cols: 2 }}>
+                        <CCol>{VerticallyCentered()}</CCol>
+                        <CCol><CButton color="primary">Comprar</CButton></CCol>
+                      </CRow>
+                    </CCardFooter>
                   </CCard>
-                </CCardBody>
-              </CCol>
-              <CCol xs={3}>
-                <CCardBody>
-                  <CCard style={{ width: '17rem' }}>
-                    <CCardImage orientation="top" src={ReactImg} />
-                    <CCardBody>
-                      <CCardTitle>Card title</CCardTitle>
-                      <CCardText>
-                        Some quick example text to build on the card title and make up the bulk of the
-                        card&#39;s content.
-                      </CCardText>
-                      <CButton color="primary" href="#">
-                        Go somewhere
-                      </CButton>
-                    </CCardBody>
-                  </CCard>
-                </CCardBody>
-              </CCol>
-              <CCol xs={3}>
-                <CCardBody>
-                  <CCard style={{ width: '17rem' }}>
-                    <CCardImage orientation="top" src={ReactImg} />
-                    <CCardBody>
-                      <CCardTitle>Card title</CCardTitle>
-                      <CCardText>
-                        Some quick example text to build on the card title and make up the bulk of the
-                        card&#39;s content.
-                      </CCardText>
-                      <CButton color="primary" href="#">
-                        Go somewhere
-                      </CButton>
-                    </CCardBody>
-                  </CCard>
-                </CCardBody>
-              </CCol>
-              <CCol xs={3}>
-                <CCardBody>
-                  <CCard style={{ width: '17rem' }}>
-                    <CCardImage orientation="top" src={ReactImg} />
-                    <CCardBody>
-                      <CCardTitle>Card title</CCardTitle>
-                      <CCardText>
-                        Some quick example text to build on the card title and make up the bulk of the
-                        card&#39;s content.
-                      </CCardText>
-                      <CButton color="primary" href="#">
-                        Go somewhere
-                      </CButton>
-                    </CCardBody>
-                  </CCard>
-                </CCardBody>
-              </CCol>
-            </CRow>
+                </CCol>
+              </CRow>
+            </CContainer>
           </CCard>
         </CCol>
       </CRow>
