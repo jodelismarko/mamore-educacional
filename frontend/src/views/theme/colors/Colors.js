@@ -74,7 +74,7 @@ const Colors = () => {
             <CCol xs={3}>
               <CCardBody>
                 <CCard style={{ width: '17rem' }}>
-                  <CCardImage orientation="top" src={ReactImg2} />
+                  <CCardImage orientation="top" src={ReactImg} />
                   <CCardBody>
                     <CCardTitle>Puzzel 3D</CCardTitle>
                     < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
