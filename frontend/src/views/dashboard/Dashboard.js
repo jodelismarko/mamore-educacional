@@ -1,78 +1,408 @@
-import React, { useState, useEffect } from 'react';
-import { CCard, CCardBody, CCol, CCardHeader, CRow } from '@coreui/react'
+import React, { useState } from 'react'
 import ImageGallery from 'react-image-gallery';
-import "react-image-gallery/styles/css/image-gallery.css";
+import ReactImg from 'src/assets/images/react.jpg'
+import VerticallyCentered from './Modal'
+import {
+  CModalBody,
+  CContainer,
+  CModalHeader,
+  CCardSubtitle,
+  CModalFooter,
+  CCardFooter,
+  CModalTitle,
+  CButton,
+  CCard,
+  CCardGroup,
+  CModal,
+  CCardBody,
+  CCardHeader,
+  CCardImage,
+  CCarousel, CCarouselItem, CImage,
+  CCardText,
+  CCardTitle,
+  CCol,
+  CRow,
+} from '@coreui/react'
+
+const imagess = [
+  {
+    original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
+  },
+  {
+    original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
+  },
+  {
+    original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
+  }
+]
 
 
-import { Galleria } from 'primereact/galleria';
-import { PhotoService } from './service/PhotoService';
 
-function DashboardDetalhes() {
-  const imagess = [
-    {
-      original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
-      thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria1s.jpg'
-    },
-    {
-      original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
-      thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria2s.jpg'
-    },
-    {
-      original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
-      thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria3s.jpg'
-    },
-    {
-      original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria4.jpg',
-      thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria4s.jpg'
-    },
-    {
-      original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria5.jpg',
-      thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria5s.jpg'
-    },
-    {
-      original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria5.jpg',
-      thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria5s.jpg'
-    },
-    {
-      original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria6.jpg',
-      thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria6s.jpg'
-    },
-    {
-      original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria7.jpg',
-      thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria7s.jpg'
-    },
-    {
-      original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria8.jpg',
-      thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria8s.jpg'
-    },
-    {
-      original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria9.jpg',
-      thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria9s.jpg'
-    },
-    {
-      original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria10.jpg',
-      thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria10s.jpg'
-    },
-    {
-      original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria11.jpg',
-      thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria11s.jpg'
-    },
-    {
-      original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria12.jpg',
-      thumbnail: 'https://primefaces.org/cdn/primereact/images/galleria/galleria12s.jpg'
-    }
-
-  ]
-
-    return (
-      <div style={{ justifyItems:'center'}}>
-        <div style={{background:'black', width:'70%', height:'50%', alignItems:'center'}}>
-            <ImageGallery showPlayButton={false} items={imagess} />
-        </div>
-      </div>
-
-    )
+const Colors = () => {
+  return (
+    <>
+      <CRow>
+        <CCol xs={12}>
+          <CCard className="mb-4">
+            <CCardHeader>
+              <strong>Lista de produtos</strong>
+            </CCardHeader>
+            <CRow>
+              <CCol xs={3}>
+                <CCardBody>
+                  <CCard style={{ width: '17rem' }}>
+                    <CCardImage orientation="top" src={ReactImg} />
+                    <CCardBody>
+                      <CCardTitle>Puzzel 3D</CCardTitle>
+                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
+                      <CCardText>
+                        Teste para card de tprodutos criado para educa&ccedil;&atilde;o mamtem&aacute;tica pela empresa mamor&eacute; educacional
+                      </CCardText>
+                      <CContainer>
+                        {VerticallyCentered()}
+                        <CButton color="primary">Comprar</CButton>
+                      </CContainer>
+                    </CCardBody>
+                  </CCard>
+                </CCardBody>
+              </CCol>
+              <CCol xs={3}>
+                <CCardBody>
+                  <CCard style={{ width: '17rem' }}>
+                    <CCardImage orientation="top" src={ReactImg} />
+                    <CCardBody>
+                      <CCardTitle>Segundo produto</CCardTitle>
+                      <CCardText>
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card&#39;s content.
+                      </CCardText>
+                      <CButton color="primary" href="#Modals">
+                        Go somewhere
+                      </CButton>
+                    </CCardBody>
+                  </CCard>
+                </CCardBody>
+              </CCol>
+              <CCol xs={3}>
+                <CCardBody>
+                  <CCard style={{ width: '17rem' }}>
+                    <CCardImage orientation="top" src={ReactImg} />
+                    <CCardBody>
+                      <CCardTitle>Terceiro produto</CCardTitle>
+                      <CCardText>
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card&#39;s content.
+                      </CCardText>
+                      <CButton color="primary" href="#">
+                        Go somewhere
+                      </CButton>
+                    </CCardBody>
+                  </CCard>
+                </CCardBody>
+              </CCol>
+              <CCol xs={3}>
+                <CCardBody>
+                  <CCard style={{ width: '17rem' }}>
+                    <CCardImage orientation="top" src={ReactImg} />
+                    <CCardBody>
+                      <CCardTitle>Quarto produto</CCardTitle>
+                      <CCardText>
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card&#39;s content.
+                      </CCardText>
+                      <CButton color="primary" href="#">
+                        Go somewhere
+                      </CButton>
+                    </CCardBody>
+                  </CCard>
+                </CCardBody>
+              </CCol>
+            </CRow>
+            <CRow>
+              <CCol xs={3}>
+                <CCardBody>
+                  <CCard style={{ width: '17rem' }}>
+                    <CCardImage orientation="top" src={ReactImg} />
+                    <CCardBody>
+                      <CCardTitle>Card title</CCardTitle>
+                      <CCardText>
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card&#39;s content.
+                      </CCardText>
+                      <CButton color="primary" href="#">
+                        Go somewhere
+                      </CButton>
+                    </CCardBody>
+                  </CCard>
+                </CCardBody>
+              </CCol>
+              <CCol xs={3}>
+                <CCardBody>
+                  <CCard style={{ width: '17rem' }}>
+                    <CCardImage orientation="top" src={ReactImg} />
+                    <CCardBody>
+                      <CCardTitle>Card title</CCardTitle>
+                      <CCardText>
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card&#39;s content.
+                      </CCardText>
+                      <CButton color="primary" href="#">
+                        Go somewhere
+                      </CButton>
+                    </CCardBody>
+                  </CCard>
+                </CCardBody>
+              </CCol>
+              <CCol xs={3}>
+                <CCardBody>
+                  <CCard style={{ width: '17rem' }}>
+                    <CCardImage orientation="top" src={ReactImg} />
+                    <CCardBody>
+                      <CCardTitle>Card title</CCardTitle>
+                      <CCardText>
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card&#39;s content.
+                      </CCardText>
+                      <CButton color="primary" href="#">
+                        Go somewhere
+                      </CButton>
+                    </CCardBody>
+                  </CCard>
+                </CCardBody>
+              </CCol>
+              <CCol xs={3}>
+                <CCardBody>
+                  <CCard style={{ width: '17rem' }}>
+                    <CCardImage orientation="top" src={ReactImg} />
+                    <CCardBody>
+                      <CCardTitle>Card title</CCardTitle>
+                      <CCardText>
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card&#39;s content.
+                      </CCardText>
+                      <CButton color="primary" href="#">
+                        Go somewhere
+                      </CButton>
+                    </CCardBody>
+                  </CCard>
+                </CCardBody>
+              </CCol>
+            </CRow>
+            <CRow>
+              <CCol xs={3}>
+                <CCardBody>
+                  <CCard style={{ width: '17rem' }}>
+                    <CCardImage orientation="top" src={ReactImg} />
+                    <CCardBody>
+                      <CCardTitle>Card title</CCardTitle>
+                      <CCardText>
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card&#39;s content.
+                      </CCardText>
+                      <CButton color="primary" href="#">
+                        Go somewhere
+                      </CButton>
+                    </CCardBody>
+                  </CCard>
+                </CCardBody>
+              </CCol>
+              <CCol xs={3}>
+                <CCardBody>
+                  <CCard style={{ width: '17rem' }}>
+                    <CCardImage orientation="top" src={ReactImg} />
+                    <CCardBody>
+                      <CCardTitle>Card title</CCardTitle>
+                      <CCardText>
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card&#39;s content.
+                      </CCardText>
+                      <CButton color="primary" href="#">
+                        Go somewhere
+                      </CButton>
+                    </CCardBody>
+                  </CCard>
+                </CCardBody>
+              </CCol>
+              <CCol xs={3}>
+                <CCardBody>
+                  <CCard style={{ width: '17rem' }}>
+                    <CCardImage orientation="top" src={ReactImg} />
+                    <CCardBody>
+                      <CCardTitle>Card title</CCardTitle>
+                      <CCardText>
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card&#39;s content.
+                      </CCardText>
+                      <CButton color="primary" href="#">
+                        Go somewhere
+                      </CButton>
+                    </CCardBody>
+                  </CCard>
+                </CCardBody>
+              </CCol>
+              <CCol xs={3}>
+                <CCardBody>
+                  <CCard style={{ width: '17rem' }}>
+                    <CCardImage orientation="top" src={ReactImg} />
+                    <CCardBody>
+                      <CCardTitle>Card title</CCardTitle>
+                      <CCardText>
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card&#39;s content.
+                      </CCardText>
+                      <CButton color="primary" href="#">
+                        Go somewhere
+                      </CButton>
+                    </CCardBody>
+                  </CCard>
+                </CCardBody>
+              </CCol>
+            </CRow>
+            <CRow>
+              <CCol xs={3}>
+                <CCardBody>
+                  <CCard style={{ width: '17rem' }}>
+                    <CCardImage orientation="top" src={ReactImg} />
+                    <CCardBody>
+                      <CCardTitle>Card title</CCardTitle>
+                      <CCardText>
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card&#39;s content.
+                      </CCardText>
+                      <CButton color="primary" href="#">
+                        Go somewhere
+                      </CButton>
+                    </CCardBody>
+                  </CCard>
+                </CCardBody>
+              </CCol>
+              <CCol xs={3}>
+                <CCardBody>
+                  <CCard style={{ width: '17rem' }}>
+                    <CCardImage orientation="top" src={ReactImg} />
+                    <CCardBody>
+                      <CCardTitle>Card title</CCardTitle>
+                      <CCardText>
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card&#39;s content.
+                      </CCardText>
+                      <CButton color="primary" href="#">
+                        Go somewhere
+                      </CButton>
+                    </CCardBody>
+                  </CCard>
+                </CCardBody>
+              </CCol>
+              <CCol xs={3}>
+                <CCardBody>
+                  <CCard style={{ width: '17rem' }}>
+                    <CCardImage orientation="top" src={ReactImg} />
+                    <CCardBody>
+                      <CCardTitle>Card title</CCardTitle>
+                      <CCardText>
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card&#39;s content.
+                      </CCardText>
+                      <CButton color="primary" href="#">
+                        Go somewhere
+                      </CButton>
+                    </CCardBody>
+                  </CCard>
+                </CCardBody>
+              </CCol>
+              <CCol xs={3}>
+                <CCardBody>
+                  <CCard style={{ width: '17rem' }}>
+                    <CCardImage orientation="top" src={ReactImg} />
+                    <CCardBody>
+                      <CCardTitle>Card title</CCardTitle>
+                      <CCardText>
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card&#39;s content.
+                      </CCardText>
+                      <CButton color="primary" href="#">
+                        Go somewhere
+                      </CButton>
+                    </CCardBody>
+                  </CCard>
+                </CCardBody>
+              </CCol>
+            </CRow>
+            <CRow>
+              <CCol xs={3}>
+                <CCardBody>
+                  <CCard style={{ width: '17rem' }}>
+                    <CCardImage orientation="top" src={ReactImg} />
+                    <CCardBody>
+                      <CCardTitle>Card title</CCardTitle>
+                      <CCardText>
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card&#39;s content.
+                      </CCardText>
+                      <CButton color="primary" href="#">
+                        Go somewhere
+                      </CButton>
+                    </CCardBody>
+                  </CCard>
+                </CCardBody>
+              </CCol>
+              <CCol xs={3}>
+                <CCardBody>
+                  <CCard style={{ width: '17rem' }}>
+                    <CCardImage orientation="top" src={ReactImg} />
+                    <CCardBody>
+                      <CCardTitle>Card title</CCardTitle>
+                      <CCardText>
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card&#39;s content.
+                      </CCardText>
+                      <CButton color="primary" href="#">
+                        Go somewhere
+                      </CButton>
+                    </CCardBody>
+                  </CCard>
+                </CCardBody>
+              </CCol>
+              <CCol xs={3}>
+                <CCardBody>
+                  <CCard style={{ width: '17rem' }}>
+                    <CCardImage orientation="top" src={ReactImg} />
+                    <CCardBody>
+                      <CCardTitle>Card title</CCardTitle>
+                      <CCardText>
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card&#39;s content.
+                      </CCardText>
+                      <CButton color="primary" href="#">
+                        Go somewhere
+                      </CButton>
+                    </CCardBody>
+                  </CCard>
+                </CCardBody>
+              </CCol>
+              <CCol xs={3}>
+                <CCardBody>
+                  <CCard style={{ width: '17rem' }}>
+                    <CCardImage orientation="top" src={ReactImg} />
+                    <CCardBody>
+                      <CCardTitle>Card title</CCardTitle>
+                      <CCardText>
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card&#39;s content.
+                      </CCardText>
+                      <CButton color="primary" href="#">
+                        Go somewhere
+                      </CButton>
+                    </CCardBody>
+                  </CCard>
+                </CCardBody>
+              </CCol>
+            </CRow>
+          </CCard>
+        </CCol>
+      </CRow>
+    </>
+  )
 }
 
-
-export default DashboardDetalhes
+export default Colors
