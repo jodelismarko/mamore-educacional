@@ -32,17 +32,9 @@ import avatar4 from '../../assets/images/avatars/4.jpg'
 import avatar5 from '../../assets/images/avatars/5.jpg'
 import carrinhoIcon from '../../assets/images/avatars/1.jpg'
 
-import Lista from '../produtos/listaProdutos/lista'
+import ListaCompras from '../produtos/listaProdutos/ListaCompras'
 
-
-const people = [
-  {firstName: 'Elson', lastName: 'Correia', info: {age: 24}},
-  {firstName: 'John', lastName: 'Doe', info: {age: 18}},
-  {firstName: 'Jane', lastName: 'Doe', info: {age: 34}},
-  {firstName: 'Maria', lastName: 'Carvalho', info: {age: 22}},
-  {firstName: 'Kelly', lastName: 'Correia', info:{age: 23}},
-  {firstName: 'Don', lastName: 'Quichote', info: {age: 39}},
-]
+import { carrinho } from '../../services/CarrinhoCompras'
 
 
 const Carrinho = () => {
@@ -57,13 +49,14 @@ const Carrinho = () => {
         </CDropdownToggle>
       </CDropdown>
 
-      <COffcanvas placement="end" visible={visible} onHide={() => setVisible(false)}>
+      <COffcanvas placement="end" scroll={true} visible={visible} onHide={() => setVisible(false)}>
         <COffcanvasHeader className="justify-content-md-between">
           <COffcanvasTitle>Lista de produtos</COffcanvasTitle>
           <CCloseButton className="text-reset" onClick={() => setVisible(false)} />
         </COffcanvasHeader>
+        <COffcanvasBody>
 
-        <Lista people={people}/>
+          <ListaCompras carrinho={carrinho} />
 
 
           <CContainer style={{ paddingRight: 3, paddingLeft: 5, paddingTop: 50, paddingBottom: 30 }} >
@@ -93,11 +86,14 @@ const Carrinho = () => {
           </CContainer>
 
 
-            <CContainer style={{width:'80%'}}>
-              <CRow>
-                <CButton onClick={() => setVisible(false)} color="primary" type="submit">Solicitar Or&ccedil;amento</CButton>
-              </CRow>
-            </CContainer>
+          <CContainer style={{ width: '80%' }}>
+            <CRow>
+              <CButton onClick={() => setVisible(false)} color="primary" type="submit">Solicitar Or&ccedil;amento</CButton>
+            </CRow>
+          </CContainer>
+        </COffcanvasBody>
+
+
       </COffcanvas>
     </>
 
