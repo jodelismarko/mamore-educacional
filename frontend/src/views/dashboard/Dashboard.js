@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactImg from 'src/assets/images/react.jpg'
+import FlatList from 'flatlist-react';
 import VerticallyCentered from './Modal'
 import {
   CContainer,
@@ -14,7 +15,35 @@ import {
   CCol,
   CRow,
   CCardFooter,
+  CInputGroup,
+  CFormInput
 } from '@coreui/react'
+
+import { carrinho } from '../../services/CarrinhoCompras'
+import { produtos } from '../../services/ListaProdutos'
+
+
+
+const renderPerson = (produtos, idx) => {
+  return (
+    <CCol style={{ paddingTop: 10, paddingBottom: 10 }}>
+    <CCard>
+      <CCardImage orientation="top" src={produtos.imagens.original} />
+      <CCardBody>
+        <CCardTitle>{produtos.nome}</CCardTitle>
+        < CCardSubtitle>{produtos.codigo}</ CCardSubtitle>
+        <CCardText />
+      </CCardBody>
+      <CCardFooter>
+        <CRow xs={{ cols: 2 }}>
+          <CCol>{VerticallyCentered()}</CCol>
+          <CCol><CButton color="primary">Comprar</CButton></CCol>
+        </CRow>
+      </CCardFooter>
+    </CCard>
+  </CCol>
+  );
+}
 
 const Colors = () => {
   return (
@@ -27,278 +56,12 @@ const Colors = () => {
             </CCardHeader>
             <CContainer>
               <CRow xs={{ cols: 1 }} sm={{ cols: 2 }} md={{ cols: 4 }} style={{ paddingTop: 30, paddingBottom: 50 }}>
-                <CCol style={{paddingTop:10,paddingBottom:10}}>
-                  <CCard>
-                    <CCardImage orientation="top" src={ReactImg} />
-                    <CCardBody>
-                      <CCardTitle>Puzzel 3D</CCardTitle>
-                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
-                      <CCardText />
-                    </CCardBody>
-                    <CCardFooter>
-                      <CRow xs={{ cols: 2 }}>
-                        <CCol>{VerticallyCentered()}</CCol>
-                        <CCol><CButton color="primary">Comprar</CButton></CCol>
-                      </CRow>
-                    </CCardFooter>
-                  </CCard>
-                </CCol>
-                <CCol style={{paddingTop:10,paddingBottom:10}}>
-                  <CCard>
-                    <CCardImage orientation="top" src={ReactImg} />
-                    <CCardBody>
-                      <CCardTitle>Puzzel 3D</CCardTitle>
-                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
-                      <CCardText />
-                    </CCardBody>
-                    <CCardFooter>
-                      <CRow xs={{ cols: 2 }}>
-                        <CCol>{VerticallyCentered()}</CCol>
-                        <CCol><CButton color="primary">Comprar</CButton></CCol>
-                      </CRow>
-                    </CCardFooter>
-                  </CCard>
-                </CCol>
-                <CCol style={{paddingTop:10,paddingBottom:10}}>
-                  <CCard>
-                    <CCardImage orientation="top" src={ReactImg} />
-                    <CCardBody>
-                      <CCardTitle>Puzzel 3D</CCardTitle>
-                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
-                      <CCardText />
-                    </CCardBody>
-                    <CCardFooter>
-                      <CRow xs={{ cols: 2 }}>
-                        <CCol>{VerticallyCentered()}</CCol>
-                        <CCol><CButton color="primary">Comprar</CButton></CCol>
-                      </CRow>
-                    </CCardFooter>
-                  </CCard>
-                </CCol>
-                <CCol style={{paddingTop:10,paddingBottom:10}}>
-                  <CCard>
-                    <CCardImage orientation="top" src={ReactImg} />
-                    <CCardBody>
-                      <CCardTitle>Puzzel 3D</CCardTitle>
-                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
-                      <CCardText />
-                    </CCardBody>
-                    <CCardFooter>
-                      <CRow xs={{ cols: 2 }}>
-                        <CCol>{VerticallyCentered()}</CCol>
-                        <CCol><CButton color="primary">Comprar</CButton></CCol>
-                      </CRow>
-                    </CCardFooter>
-                  </CCard>
-                </CCol>
-                <CCol style={{paddingTop:10,paddingBottom:10}}>
-                  <CCard>
-                    <CCardImage orientation="top" src={ReactImg} />
-                    <CCardBody>
-                      <CCardTitle>Puzzel 3D</CCardTitle>
-                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
-                      <CCardText />
-                    </CCardBody>
-                    <CCardFooter>
-                      <CRow xs={{ cols: 2 }}>
-                        <CCol>{VerticallyCentered()}</CCol>
-                        <CCol><CButton color="primary">Comprar</CButton></CCol>
-                      </CRow>
-                    </CCardFooter>
-                  </CCard>
-                </CCol>
-                <CCol style={{paddingTop:10,paddingBottom:10}}>
-                  <CCard>
-                    <CCardImage orientation="top" src={ReactImg} />
-                    <CCardBody>
-                      <CCardTitle>Puzzel 3D</CCardTitle>
-                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
-                      <CCardText />
-                    </CCardBody>
-                    <CCardFooter>
-                      <CRow xs={{ cols: 2 }}>
-                        <CCol>{VerticallyCentered()}</CCol>
-                        <CCol><CButton color="primary">Comprar</CButton></CCol>
-                      </CRow>
-                    </CCardFooter>
-                  </CCard>
-                </CCol>
-                <CCol style={{paddingTop:10,paddingBottom:10}}>
-                  <CCard>
-                    <CCardImage orientation="top" src={ReactImg} />
-                    <CCardBody>
-                      <CCardTitle>Puzzel 3D</CCardTitle>
-                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
-                      <CCardText />
-                    </CCardBody>
-                    <CCardFooter>
-                      <CRow xs={{ cols: 2 }}>
-                        <CCol>{VerticallyCentered()}</CCol>
-                        <CCol><CButton color="primary">Comprar</CButton></CCol>
-                      </CRow>
-                    </CCardFooter>
-                  </CCard>
-                </CCol>
-                <CCol style={{paddingTop:10,paddingBottom:10}}>
-                  <CCard>
-                    <CCardImage orientation="top" src={ReactImg} />
-                    <CCardBody>
-                      <CCardTitle>Puzzel 3D</CCardTitle>
-                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
-                      <CCardText />
-                    </CCardBody>
-                    <CCardFooter>
-                      <CRow xs={{ cols: 2 }}>
-                        <CCol>{VerticallyCentered()}</CCol>
-                        <CCol><CButton color="primary">Comprar</CButton></CCol>
-                      </CRow>
-                    </CCardFooter>
-                  </CCard>
-                </CCol>
-                <CCol style={{paddingTop:10,paddingBottom:10}}>
-                  <CCard>
-                    <CCardImage orientation="top" src={ReactImg} />
-                    <CCardBody>
-                      <CCardTitle>Puzzel 3D</CCardTitle>
-                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
-                      <CCardText />
-                    </CCardBody>
-                    <CCardFooter>
-                      <CRow xs={{ cols: 2 }}>
-                        <CCol>{VerticallyCentered()}</CCol>
-                        <CCol><CButton color="primary">Comprar</CButton></CCol>
-                      </CRow>
-                    </CCardFooter>
-                  </CCard>
-                </CCol>
-                <CCol style={{paddingTop:10,paddingBottom:10}}>
-                  <CCard>
-                    <CCardImage orientation="top" src={ReactImg} />
-                    <CCardBody>
-                      <CCardTitle>Puzzel 3D</CCardTitle>
-                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
-                      <CCardText />
-                    </CCardBody>
-                    <CCardFooter>
-                      <CRow xs={{ cols: 2 }}>
-                        <CCol>{VerticallyCentered()}</CCol>
-                        <CCol><CButton color="primary">Comprar</CButton></CCol>
-                      </CRow>
-                    </CCardFooter>
-                  </CCard>
-                </CCol>
-                <CCol style={{paddingTop:10,paddingBottom:10}}>
-                  <CCard>
-                    <CCardImage orientation="top" src={ReactImg} />
-                    <CCardBody>
-                      <CCardTitle>Puzzel 3D</CCardTitle>
-                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
-                      <CCardText />
-                    </CCardBody>
-                    <CCardFooter>
-                      <CRow xs={{ cols: 2 }}>
-                        <CCol>{VerticallyCentered()}</CCol>
-                        <CCol><CButton color="primary">Comprar</CButton></CCol>
-                      </CRow>
-                    </CCardFooter>
-                  </CCard>
-                </CCol>
-                <CCol style={{paddingTop:10,paddingBottom:10}}>
-                  <CCard>
-                    <CCardImage orientation="top" src={ReactImg} />
-                    <CCardBody>
-                      <CCardTitle>Puzzel 3D</CCardTitle>
-                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
-                      <CCardText />
-                    </CCardBody>
-                    <CCardFooter>
-                      <CRow xs={{ cols: 2 }}>
-                        <CCol>{VerticallyCentered()}</CCol>
-                        <CCol><CButton color="primary">Comprar</CButton></CCol>
-                      </CRow>
-                    </CCardFooter>
-                  </CCard>
-                </CCol>
-                <CCol style={{paddingTop:10,paddingBottom:10}}>
-                  <CCard>
-                    <CCardImage orientation="top" src={ReactImg} />
-                    <CCardBody>
-                      <CCardTitle>Puzzel 3D</CCardTitle>
-                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
-                      <CCardText />
-                    </CCardBody>
-                    <CCardFooter>
-                      <CRow xs={{ cols: 2 }}>
-                        <CCol>{VerticallyCentered()}</CCol>
-                        <CCol><CButton color="primary">Comprar</CButton></CCol>
-                      </CRow>
-                    </CCardFooter>
-                  </CCard>
-                </CCol>
-                <CCol style={{paddingTop:10,paddingBottom:10}}>
-                  <CCard>
-                    <CCardImage orientation="top" src={ReactImg} />
-                    <CCardBody>
-                      <CCardTitle>Puzzel 3D</CCardTitle>
-                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
-                      <CCardText />
-                    </CCardBody>
-                    <CCardFooter>
-                      <CRow xs={{ cols: 2 }}>
-                        <CCol>{VerticallyCentered()}</CCol>
-                        <CCol><CButton color="primary">Comprar</CButton></CCol>
-                      </CRow>
-                    </CCardFooter>
-                  </CCard>
-                </CCol>
-                <CCol style={{paddingTop:10,paddingBottom:10}}>
-                  <CCard>
-                    <CCardImage orientation="top" src={ReactImg} />
-                    <CCardBody>
-                      <CCardTitle>Puzzel 3D</CCardTitle>
-                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
-                      <CCardText />
-                    </CCardBody>
-                    <CCardFooter>
-                      <CRow xs={{ cols: 2 }}>
-                        <CCol>{VerticallyCentered()}</CCol>
-                        <CCol><CButton color="primary">Comprar</CButton></CCol>
-                      </CRow>
-                    </CCardFooter>
-                  </CCard>
-                </CCol>
-                <CCol style={{paddingTop:10,paddingBottom:10}}>
-                  <CCard>
-                    <CCardImage orientation="top" src={ReactImg} />
-                    <CCardBody>
-                      <CCardTitle>Puzzel 3D</CCardTitle>
-                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
-                      <CCardText />
-                    </CCardBody>
-                    <CCardFooter>
-                      <CRow xs={{ cols: 2 }}>
-                        <CCol>{VerticallyCentered()}</CCol>
-                        <CCol><CButton color="primary">Comprar</CButton></CCol>
-                      </CRow>
-                    </CCardFooter>
-                  </CCard>
-                </CCol>
-                <CCol style={{paddingTop:10,paddingBottom:10}}>
-                  <CCard>
-                    <CCardImage orientation="top" src={ReactImg} />
-                    <CCardBody>
-                      <CCardTitle>Puzzel 3D</CCardTitle>
-                      < CCardSubtitle>Cod: Ma205</ CCardSubtitle>
-                      <CCardText />
-                    </CCardBody>
-                    <CCardFooter>
-                      <CRow xs={{ cols: 2 }}>
-                        <CCol>{VerticallyCentered()}</CCol>
-                        <CCol><CButton color="primary">Comprar</CButton></CCol>
-                      </CRow>
-                    </CCardFooter>
-                  </CCard>
-                </CCol>
+
+                <FlatList
+                  list={produtos}
+                  renderItem={renderPerson}
+                  renderWhenEmpty={() => <div>Você ainda não adicionou produtos no seu carrinho.</div>}
+                />
               </CRow>
             </CContainer>
           </CCard>
