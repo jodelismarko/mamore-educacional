@@ -2,7 +2,7 @@ export const produtos = [
     {
         nome: 'Primeiro produto', 
         codigo: 'ma206', 
-        descricao: 'Descricao do primeiro Produto Teste, Descricao do primeiro Produto Teste. Descricao do primeiro Produto Teste,Descricao do primeiro Produto Teste ',
+        descricao: 'Descricao do primeiro Produto Teste, Descricao do primeiro Produto Teste. Descricao do primeiro Produto Teste, Descricao do primeiro Produto Teste. Descricao do primeiro Produto Teste, Descricao do primeiro Produto Teste. Descricao do primeiro Produto Teste,Descricao do primeiro Produto Teste. Descricao do primeiro Produto Teste, Descricao do primeiro Produto Teste. Descricao do primeiro Produto Teste, Descricao do primeiro Produto Teste ',
         capa: 'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
         detalhes:[
               {

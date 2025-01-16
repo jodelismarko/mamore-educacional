@@ -2,6 +2,8 @@ import React from 'react'
 import ReactImg from 'src/assets/images/react.jpg'
 import FlatList from 'flatlist-react';
 import VerticallyCentered from './Modal'
+import { useSelector, useDispatch } from 'react-redux'
+
 import {
   CContainer,
   CCardSubtitle,
@@ -25,6 +27,8 @@ import { produtos } from '../../services/ListaProdutos'
 
 
 const renderPerson = (produtos, idx) => {
+  const dispatch = useDispatch()
+  const carrinho = useSelector((state) => state.carrinho)
   return (
     <CCol style={{ paddingTop: 10, paddingBottom: 10 }}>
     <CCard>
@@ -37,7 +41,7 @@ const renderPerson = (produtos, idx) => {
       <CCardFooter>
         <CRow xs={{ cols: 2 }}>
           <CCol>{VerticallyCentered(produtos.descricao, produtos.detalhes)}</CCol>
-          <CCol><CButton color="primary">Comprar</CButton></CCol>
+          <CCol><CButton color="primary" onClick={() => dispatch({ type: 'addCarrinho', carrinho: produtos })}>Comprar</CButton></CCol>
         </CRow>
       </CCardFooter>
     </CCard>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
 import {
   CButton,
@@ -34,12 +35,10 @@ import carrinhoIcon from '../../assets/images/avatars/1.jpg'
 
 import ListaCompras from '../produtos/listaProdutos/ListaCompras'
 
-import { carrinho } from '../../services/CarrinhoCompras'
-
-
 const Carrinho = () => {
+  const dispatch = useDispatch()
+  const carrinho = useSelector((state) => state.carrinho)
   const [visible, setVisible] = useState(false)
-
 
   return (
     <>

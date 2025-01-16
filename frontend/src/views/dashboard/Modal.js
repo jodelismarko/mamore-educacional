@@ -1,25 +1,16 @@
 import React, { useState } from 'react'
 import ImageGallery from 'react-image-gallery';
-
 import {
     CModalBody,
     CModalFooter,
     CButton,
     CModal,
-    CContainer
+    CContainer,
+    CCardText,
+    CModalTitle
   } from '@coreui/react'
 
-  const imagess = [
-  {
-    original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
-  },
-  {
-    original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
-  },
-  {
-    original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
-  }
-]
+
 const VerticallyCentered = (descricao, detalhes) => {
     const [visible, setVisible] = useState(false)
     return (
@@ -33,9 +24,9 @@ const VerticallyCentered = (descricao, detalhes) => {
               <ImageGallery showPlayButton={false} showBullets={true} items={detalhes} />
             </CContainer>
           </CContainer>
-          <CModalBody>
+            <CModalTitle style={{padding:20, textAlign:'justify'}}>
             {descricao}
-          </CModalBody>
+            </CModalTitle>
           <CModalFooter>
             <CButton onClick={() => setVisible(!visible)} color="primary">Comprar</CButton>
           </CModalFooter>
