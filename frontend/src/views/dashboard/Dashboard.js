@@ -28,7 +28,7 @@ const renderPerson = (produtos, idx) => {
   return (
     <CCol style={{ paddingTop: 10, paddingBottom: 10 }}>
     <CCard>
-      <CCardImage orientation="top" src={produtos.imagens.original} />
+      <CCardImage orientation="top" src={produtos.capa} />
       <CCardBody>
         <CCardTitle>{produtos.nome}</CCardTitle>
         < CCardSubtitle>{produtos.codigo}</ CCardSubtitle>
@@ -36,7 +36,7 @@ const renderPerson = (produtos, idx) => {
       </CCardBody>
       <CCardFooter>
         <CRow xs={{ cols: 2 }}>
-          <CCol>{VerticallyCentered()}</CCol>
+          <CCol>{VerticallyCentered(produtos.descricao, produtos.detalhes)}</CCol>
           <CCol><CButton color="primary">Comprar</CButton></CCol>
         </CRow>
       </CCardFooter>

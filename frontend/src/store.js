@@ -1,6 +1,7 @@
 import { legacy_createStore as createStore } from 'redux'
 
 const initialState = {
+  detalhesShow: false,
   sidebarShow: true,
   theme: 'light',
 }

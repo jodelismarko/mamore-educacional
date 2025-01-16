@@ -20,7 +20,7 @@ import {
     original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
   }
 ]
-const VerticallyCentered = () => {
+const VerticallyCentered = (descricao, detalhes) => {
     const [visible, setVisible] = useState(false)
     return (
       <>
@@ -29,16 +29,15 @@ const VerticallyCentered = () => {
         </CButton>
         <CModal size="lg" alignment="center" visible={visible} onClose={() => setVisible(false)}>
           <CContainer style={{ justifyItems: 'center' }}>
-            <CContainer style={{ background: 'black', width: '100%', height: '100%', alignItems: 'center' }}>
-              <ImageGallery showPlayButton={false} showBullets={true} items={imagess} />
+            <CContainer style={{ background: 'black', width: '100%', height: '100%', alignItems: 'center',padding:3 }}>
+              <ImageGallery showPlayButton={false} showBullets={true} items={detalhes} />
             </CContainer>
           </CContainer>
           <CModalBody>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
-            in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+            {descricao}
           </CModalBody>
           <CModalFooter>
-            <CButton color="primary">Comprar</CButton>
+            <CButton onClick={() => setVisible(!visible)} color="primary">Comprar</CButton>
           </CModalFooter>
         </CModal>
       </>
