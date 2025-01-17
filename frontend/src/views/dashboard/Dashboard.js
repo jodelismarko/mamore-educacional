@@ -57,25 +57,20 @@ const  addProdutoCarrinho = (descricao) => {
 const Colors = () => {
   return (
     <>
-      <CRow>
         <CCol xs={12}>
           <CCard className="mb-4">
             <CCardHeader>
               <strong>Lista de produtos</strong>
             </CCardHeader>
-            <CContainer>
-              <CRow xs={{ cols: 1 }} sm={{ cols: 2 }} md={{ cols: 4 }} style={{ paddingTop: 30, paddingBottom: 50 }}>
-
+              <CRow xs={{ cols: 1 }} sm={{ cols: 2 }} md={{ cols: 5 }} style={{ paddingTop: 30, paddingBottom: 50,paddingLeft:10, paddingRight:10 }}>
                 <FlatList
                   list={produtos}
                   renderItem={renderPerson}
                   renderWhenEmpty={() => <div>Você ainda não adicionou produtos no seu carrinho.</div>}
                 />
               </CRow>
-            </CContainer>
           </CCard>
         </CCol>
-      </CRow>
     </>
   )
 }
