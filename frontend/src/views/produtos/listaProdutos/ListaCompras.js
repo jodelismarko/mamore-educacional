@@ -76,7 +76,7 @@ const ListaCompras = (props) => {
         <FlatList
             list={props.carrinho}
             renderItem={renderPerson}
-            renderWhenEmpty={() => <div>Você ainda não adicionou produtos no seu carrinho.</div>}
+            renderWhenEmpty={() => <div>Vocï¿½ ainda nï¿½o adicionou produtos no seu carrinho.</div>}
         />
 
     )
