@@ -33,6 +33,7 @@ const AppHeader = () => {
 
   const dispatch = useDispatch()
   const sidebarShow = useSelector((state) => state.sidebarShow)
+  const carrinho = useSelector((state) => state.carrinho)
 
   useEffect(() => {
     document.addEventListener('scroll', () => {

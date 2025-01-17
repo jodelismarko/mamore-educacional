@@ -2,10 +2,10 @@ import React from 'react'
 import ReactImg from 'src/assets/images/react.jpg'
 import FlatList from 'flatlist-react';
 import VerticallyCentered from './Modal'
+import { useDispatch } from 'react-redux'
+
 import {
-  CContainer,
   CCardSubtitle,
-  CButton,
   CCard,
   CCardBody,
   CCardHeader,
@@ -13,60 +13,52 @@ import {
   CCardText,
   CCardTitle,
   CCol,
-  CRow,
-  CCardFooter,
-  CInputGroup,
-  CFormInput
+  CRow
 } from '@coreui/react'
 
-import { carrinho } from '../../services/CarrinhoCompras'
 import { produtos } from '../../services/ListaProdutos'
 
+const renderPerson = (produtosCarrinho) => {
+  const dispatch = useDispatch()
 
+  const addProdutoCarrinho = () => {
+    dispatch({ type: 'addCarrinho', carrinho: produtosCarrinho })
+  }
 
-const renderPerson = (produtos, idx) => {
   return (
     <CCol style={{ paddingTop: 10, paddingBottom: 10 }}>
-    <CCard>
-      <CCardImage orientation="top" src={produtos.imagens.original} />
-      <CCardBody>
-        <CCardTitle>{produtos.nome}</CCardTitle>
-        < CCardSubtitle>{produtos.codigo}</ CCardSubtitle>
-        <CCardText />
-      </CCardBody>
-      <CCardFooter>
-        <CRow xs={{ cols: 2 }}>
-          <CCol>{VerticallyCentered()}</CCol>
-          <CCol><CButton color="primary">Comprar</CButton></CCol>
+      <CCard>
+        <CCardImage orientation="top" src={produtosCarrinho.capa} />
+        <CCardBody>
+          <CCardTitle>{produtosCarrinho.nome}</CCardTitle>
+          < CCardSubtitle>{produtosCarrinho.codigo}</ CCardSubtitle>
+          <CCardText />
+        </CCardBody>
+        <CRow >
+          <CCol md={10} >{VerticallyCentered(produtosCarrinho.descricao, produtosCarrinho.detalhes, addProdutoCarrinho)}</CCol>
         </CRow>
-      </CCardFooter>
-    </CCard>
-  </CCol>
+      </CCard>
+    </CCol>
   );
 }
 
 const Colors = () => {
   return (
     <>
-      <CRow>
-        <CCol xs={12}>
-          <CCard className="mb-4">
-            <CCardHeader>
-              <strong>Lista de produtos</strong>
-            </CCardHeader>
-            <CContainer>
-              <CRow xs={{ cols: 1 }} sm={{ cols: 2 }} md={{ cols: 4 }} style={{ paddingTop: 30, paddingBottom: 50 }}>
-
-                <FlatList
-                  list={produtos}
-                  renderItem={renderPerson}
-                  renderWhenEmpty={() => <div>Você ainda não adicionou produtos no seu carrinho.</div>}
-                />
-              </CRow>
-            </CContainer>
-          </CCard>
-        </CCol>
-      </CRow>
+      <CCol xs={12}>
+        <CCard className="mb-4">
+          <CCardHeader>
+            <strong>Lista de produtos</strong>
+          </CCardHeader>
+          <CRow xs={{ cols: 1 }} sm={{ cols: 2 }} md={{ cols: 5 }} style={{ paddingTop: 30, paddingBottom: 50, paddingLeft: 10, paddingRight: 10 }}>
+            <FlatList
+              list={produtos}
+              renderItem={renderPerson}
+              renderWhenEmpty={() => <div>Você ainda não adicionou produtos no seu carrinho.</div>}
+            />
+          </CRow>
+        </CCard>
+      </CCol>
     </>
   )
 }

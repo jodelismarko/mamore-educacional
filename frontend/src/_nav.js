@@ -1,20 +1,21 @@
 import React from 'react'
 import CIcon from '@coreui/icons-react'
-import {cilDrop} from '@coreui/icons'
-import { CNavItem,CNavTitle } from '@coreui/react'
+import {cilDrop,cilApple,cilAddressBook,cilBlurCircular,cilCasino,cilEnvelopeLetter,cilPeople} from '@coreui/icons'
+
+import { CNavItem, CNavTitle } from '@coreui/react'
 
 const _nav = [
   {
     component: CNavItem,
     name: 'Produtos',
     to: '/theme/colors',
-    icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilApple} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Na sala de Aula',
-    to: '/theme/colors',
-    icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+    to: '/theme/salaAula',
+    icon: <CIcon icon={cilAddressBook} customClassName="nav-icon" />,
   },
   {
     component: CNavTitle,
@@ -23,14 +24,14 @@ const _nav = [
   {
     component: CNavItem,
     name: 'Corte a Laser',
-    to: '/theme/colors',
-    icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+    to: '/theme/corteLaser',
+    icon: <CIcon icon={cilBlurCircular} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Impressora 3D',
-    to: '/theme/colors',
-    icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+    to: '/theme/impressora',
+    icon: <CIcon icon={cilCasino} customClassName="nav-icon" />,
   },
   {
     component: CNavTitle,
@@ -39,14 +40,14 @@ const _nav = [
   {
     component: CNavItem,
     name: 'Contatos',
-    to: '/theme/colors',
-    icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+    to: '/theme/contatos',
+    icon: <CIcon icon={cilEnvelopeLetter} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Quem Somos',
-    to: '/theme/Quemsomos',
-    icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+    to: '/theme/quemsomos',
+    icon: <CIcon icon={cilPeople} customClassName="nav-icon" />,
   },
 ]
 

@@ -2,47 +2,53 @@ import React, { useState } from 'react'
 import ImageGallery from 'react-image-gallery';
 
 import {
-    CModalBody,
-    CModalFooter,
-    CButton,
-    CModal,
-    CContainer
-  } from '@coreui/react'
+  CModalFooter,
+  CButton,
+  CModal,
+  CContainer,
+  CModalTitle,
+  CRow,
+  CCol
+} from '@coreui/react'
 
-  const imagess = [
-  {
-    original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
-  },
-  {
-    original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
-  },
-  {
-    original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
-  }
-]
-const VerticallyCentered = () => {
-    const [visible, setVisible] = useState(false)
-    return (
-      <>
-        <CButton color="primary" onClick={() => setVisible(!visible)}>
-          Detalhes
-        </CButton>
-        <CModal size="lg" alignment="center" visible={visible} onClose={() => setVisible(false)}>
-          <CContainer style={{ justifyItems: 'center' }}>
-            <CContainer style={{ background: 'black', width: '100%', height: '100%', alignItems: 'center' }}>
-              <ImageGallery showPlayButton={false} showBullets={true} items={imagess} />
-            </CContainer>
+
+const VerticallyCentered = (descricao, detalhes, addProdutoCarrinho) => {
+  const [visible, setVisible] = useState(false)
+
+  return (
+    <>
+      <CRow style={{margin:0,padding:0, width:'128%', paddingBottom:2}}>
+        <CCol xs={10} style={{margin:0,padding:0, paddingLeft:2, paddingRight:2}}>
+          <CButton color="primary" onClick={() => setVisible(!visible)} style={{width:'100%'}} >
+            Detalhes
+          </CButton>
+        </CCol>
+        <CCol xs={1} style={{margin:0,padding:0}}>
+          <CButton color="primary" onClick={() => addProdutoCarrinho()}>
+            +
+          </CButton>
+        </CCol>
+      </CRow>
+      <CModal size="lg" alignment="center" visible={visible} onClose={() => setVisible(false)}>
+        <CContainer style={{ justifyItems: 'center' }}>
+          <CContainer style={{ background: 'black', width: '100%', height: '100%', alignItems: 'center', padding: 3 }}>
+            <ImageGallery showPlayButton={false} showBullets={true} items={detalhes} />
           </CContainer>
-          <CModalBody>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
-            in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-          </CModalBody>
-          <CModalFooter>
-            <CButton color="primary">Comprar</CButton>
-          </CModalFooter>
-        </CModal>
-      </>
-    )
-  }
+        </CContainer>
+        <CModalTitle style={{ padding: 20, textAlign: 'justify' }}>
+          {descricao}
+        </CModalTitle>
+        <CModalFooter>
+          <CButton
+            onClick={() => {
+              setVisible(!visible),
+              addProdutoCarrinho()
+            }
+            } color="primary">Comprar</CButton>
+        </CModalFooter>
+      </CModal>
+    </>
+  )
+}
 
-  export default VerticallyCentered
+export default VerticallyCentered
