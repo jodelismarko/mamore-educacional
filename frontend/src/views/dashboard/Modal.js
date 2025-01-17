@@ -3,25 +3,34 @@ import ImageGallery from 'react-image-gallery';
 import { useSelector, useDispatch } from 'react-redux'
 
 import {
-  CModalBody,
   CModalFooter,
   CButton,
   CModal,
   CContainer,
-  CCardText,
-  CModalTitle
+  CModalTitle,
+  CRow,
+  CCol
 } from '@coreui/react'
 
 
-const VerticallyCentered = (descricao, detalhes,addProdutoCarrinho) => {
+const VerticallyCentered = (descricao, detalhes, addProdutoCarrinho) => {
   const [visible, setVisible] = useState(false)
   const dispatch = useDispatch()
   const carrinho = useSelector((state) => state.carrinho)
   return (
     <>
-      <CButton color="primary" onClick={() => setVisible(!visible)}>
-        Detalhes
-      </CButton>
+      <CRow style={{margin:0,padding:0, width:'128%', paddingBottom:2}}>
+        <CCol xs={10} style={{margin:0,padding:0, paddingLeft:2, paddingRight:2}}>
+          <CButton color="primary" onClick={() => setVisible(!visible)} style={{width:'100%'}} >
+            Detalhes
+          </CButton>
+        </CCol>
+        <CCol xs={1} style={{margin:0,padding:0}}>
+          <CButton color="primary" onClick={() => addProdutoCarrinho()}>
+            +
+          </CButton>
+        </CCol>
+      </CRow>
       <CModal size="lg" alignment="center" visible={visible} onClose={() => setVisible(false)}>
         <CContainer style={{ justifyItems: 'center' }}>
           <CContainer style={{ background: 'black', width: '100%', height: '100%', alignItems: 'center', padding: 3 }}>
@@ -35,8 +44,8 @@ const VerticallyCentered = (descricao, detalhes,addProdutoCarrinho) => {
           <CButton
             onClick={() => {
               setVisible(!visible),
-              addProdutoCarrinho(descricao)
-              }
+                addProdutoCarrinho()
+            }
             } color="primary">Comprar</CButton>
         </CModalFooter>
       </CModal>

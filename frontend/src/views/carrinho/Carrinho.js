@@ -35,18 +35,18 @@ import ListaCompras from '../produtos/listaProdutos/ListaCompras'
 const Carrinho = () => {
   const carrinho = useSelector((state) => state.carrinho)
   const [visible, setVisible] = useState(false)
-  const [cont, setCont] = useState(0)
+  const [caunt, setCaunt] = useState(0)
 
 
   useEffect(() => {
-    setCont(carrinho.length)
+    setCaunt(carrinho.length)
   }, [carrinho]);
 
- 
+
   return (
     <>
       <CDropdown variant="nav-item">
-        <CCardText style={{position:'absolute', color:'red', marginLeft:3, paddingTop:20}}>{cont > 0 ? cont : ''}</CCardText>
+        <CCardText style={{ position: 'absolute', color: 'red', marginLeft: 3, paddingTop: 20, zIndex: 100 }}>{caunt > 0 ? caunt : ''}</CCardText>
         <CDropdownToggle placement="bottom-end" className="py-0 pe-0" caret={false}>
           <CAvatar src={carrinhoIcon} size="md" onClick={() => setVisible(true)} />
         </CDropdownToggle>
@@ -61,9 +61,8 @@ const Carrinho = () => {
 
           <ListaCompras />
 
-
-          <CContainer style={{ paddingRight: 3, paddingLeft: 5, paddingTop: 50, paddingBottom: 30 }} >
-            <CForm className="row gy-2 gx-3 align-items-center">
+          <div style={{ margin: -20, padding: 0, paddingTop: 50, paddingBottom: 30 }} >
+            <CForm className="row gy-2 gx-3 align-items-center" style={{ margin: 0, padding: 0 }}>
               <CCol sm={8}>
                 <CFormLabel className="visually-hidden" htmlFor="autoSizingInput">
                   Nome
@@ -86,17 +85,13 @@ const Carrinho = () => {
                 </CInputGroup>
               </CCol>
             </CForm>
-          </CContainer>
-
-
+          </div>
           <CContainer style={{ width: '80%' }}>
             <CRow>
               <CButton onClick={() => setVisible(false)} color="primary" type="submit">Solicitar Or&ccedil;amento</CButton>
             </CRow>
           </CContainer>
         </COffcanvasBody>
-
-
       </COffcanvas>
     </>
 

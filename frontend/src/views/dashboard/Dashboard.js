@@ -30,7 +30,7 @@ const renderPerson = (produtos, idx) => {
   const dispatch = useDispatch()
   const carrinho = useSelector((state) => state.carrinho)
 
-const  addProdutoCarrinho = (descricao) => {    
+const  addProdutoCarrinho = () => {    
   dispatch({ type: 'addCarrinho', carrinho: produtos })
 }
 
@@ -43,12 +43,9 @@ const  addProdutoCarrinho = (descricao) => {
         < CCardSubtitle>{produtos.codigo}</ CCardSubtitle>
         <CCardText />
       </CCardBody>
-      <CCardFooter>
-        <CRow xs={{ cols: 2 }}>
-          <CCol>{VerticallyCentered(produtos.descricao, produtos.detalhes, addProdutoCarrinho)}</CCol>
-          <CCol><CButton color="primary" onClick={addProdutoCarrinho}>Comprar</CButton></CCol>
+        <CRow >
+          <CCol md={10} >{VerticallyCentered(produtos.descricao, produtos.detalhes, addProdutoCarrinho)}</CCol>
         </CRow>
-      </CCardFooter>
     </CCard>
   </CCol>
   );

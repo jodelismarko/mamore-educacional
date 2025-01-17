@@ -15,7 +15,7 @@ import {
     CFormInput, CInputGroup, 
 } from '@coreui/react'
 
-const renderPerson = (carrinho, removeProdutoCarrinho,reset) => {
+const renderPerson = (carrinho, removeProdutoCarrinho) => {
     return (
         <CContainer style={{ padding: 5 }}>
             <CCard >
@@ -53,19 +53,9 @@ const renderPerson = (carrinho, removeProdutoCarrinho,reset) => {
 const ListaCompras = () => {
     const dispatch = useDispatch()
     const carrinho = useSelector((state) => state.carrinho)
-    const [seed, setSeed] = useState(1);
 
-    const reset = () => {
-        setSeed(Math.random());
-    }
-
-    useEffect(() => {
-        console.log('Quantidade de produtos no carrinho mudou')
-      }, [carrinho]);
-
-    const removeProdutoCarrinho = (carrinho) => {
-        console.log(carrinho)
-        dispatch({ type: 'removeCarrinho', carrinho: carrinho })
+    const removeProdutoCarrinho = (produtoSerRemovido) => {
+        dispatch({ type: 'removeCarrinho', carrinho: produtoSerRemovido })
     }
 
     return (
