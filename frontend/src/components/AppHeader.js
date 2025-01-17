@@ -42,10 +42,6 @@ const AppHeader = () => {
     })
   }, [])
 
-  useEffect(() => {
-    console.log(carrinho.length)
-  }, [carrinho.length]);
-
   return (
     <CHeader position="sticky" className="mb-4 p-0" ref={headerRef}>
       <CContainer className="border-bottom px-4" fluid>

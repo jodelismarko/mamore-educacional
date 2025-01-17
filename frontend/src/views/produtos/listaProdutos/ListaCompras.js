@@ -62,7 +62,7 @@ const ListaCompras = () => {
         <FlatList
             list={carrinho}
             renderItem={(item,k) => renderPerson(item, removeProdutoCarrinho)}
-            renderWhenEmpty={() => <div>Você ainda não adicionou produtos no seu carrinho.</div>}
+            renderWhenEmpty={() => <div style={{textAlign:'center'}}>Voc&ecirc; ainda n&atilde;o adicionou produtos no seu carrinho.</div>}
         />
 
     )

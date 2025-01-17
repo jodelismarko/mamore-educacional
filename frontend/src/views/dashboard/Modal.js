@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import ImageGallery from 'react-image-gallery';
-import { useSelector, useDispatch } from 'react-redux'
 
 import {
   CModalFooter,
@@ -15,8 +14,7 @@ import {
 
 const VerticallyCentered = (descricao, detalhes, addProdutoCarrinho) => {
   const [visible, setVisible] = useState(false)
-  const dispatch = useDispatch()
-  const carrinho = useSelector((state) => state.carrinho)
+
   return (
     <>
       <CRow style={{margin:0,padding:0, width:'128%', paddingBottom:2}}>
@@ -44,7 +42,7 @@ const VerticallyCentered = (descricao, detalhes, addProdutoCarrinho) => {
           <CButton
             onClick={() => {
               setVisible(!visible),
-                addProdutoCarrinho()
+              addProdutoCarrinho()
             }
             } color="primary">Comprar</CButton>
         </CModalFooter>

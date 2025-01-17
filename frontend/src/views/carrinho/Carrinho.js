@@ -1,4 +1,4 @@
-import React, { useState, updateState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import {
@@ -6,23 +6,16 @@ import {
   CAvatar,
   CRow,
   CCol,
-  CCardImage,
-  CCardBody,
-  CCardTitle,
   CCardText,
   CContainer,
-  CCard,
   CDropdown,
   CDropdownToggle,
   CCloseButton,
   COffcanvas,
   COffcanvasBody,
-  CCardFooter,
   COffcanvasHeader,
-  CFormCheck,
   CForm,
   CFormLabel,
-  CFormSelect,
   COffcanvasTitle,
   CFormInput, CInputGroup, CInputGroupText
 } from '@coreui/react'
@@ -33,20 +26,21 @@ import carrinhoIcon from '../../assets/images/avatars/1.jpg'
 import ListaCompras from '../produtos/listaProdutos/ListaCompras'
 
 const Carrinho = () => {
-  const carrinho = useSelector((state) => state.carrinho)
-  const [visible, setVisible] = useState(false)
+  const dispatch = useDispatch()
   const [caunt, setCaunt] = useState(0)
+  const [visible, setVisible] = useState(false)
+  const carrinho = useSelector((state) => state.carrinho)
 
 
-  useEffect(() => {
-    setCaunt(carrinho.length)
-  }, [carrinho]);
+  const limparCarrinho = () => {
+    dispatch({ type: 'limparCarrinho' })
+  }
 
 
   return (
     <>
       <CDropdown variant="nav-item">
-        <CCardText style={{ position: 'absolute', color: 'red', marginLeft: 3, paddingTop: 20, zIndex: 100 }}>{caunt > 0 ? caunt : ''}</CCardText>
+        <CCardText style={{ position: 'absolute', color: 'red', marginLeft: 3, paddingTop: 20, zIndex: 100 }}>{carrinho.length > 0 ? carrinho.length : ''}</CCardText>
         <CDropdownToggle placement="bottom-end" className="py-0 pe-0" caret={false}>
           <CAvatar src={carrinhoIcon} size="md" onClick={() => setVisible(true)} />
         </CDropdownToggle>
@@ -88,7 +82,7 @@ const Carrinho = () => {
           </div>
           <CContainer style={{ width: '80%' }}>
             <CRow>
-              <CButton onClick={() => setVisible(false)} color="primary" type="submit">Solicitar Or&ccedil;amento</CButton>
+              <CButton onClick={() => {setVisible(false), limparCarrinho()}} color="primary" type="submit">Solicitar Or&ccedil;amento</CButton>
             </CRow>
           </CContainer>
         </COffcanvasBody>

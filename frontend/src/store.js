@@ -13,15 +13,18 @@ const changeState = (state = initialState, { type, ...rest }) => {
     case 'set':
       return { ...state, ...rest }
       case 'setCaunt':
-        console.log('adicionando um ao caunt')
         state.caunt = state.caunt + 1
         return state
     case 'addCarrinho':
+      console.log("adicionando um novo elemento no carrinho")
       state.carrinho = [...state.carrinho, rest.carrinho]
       return state
     case 'removeCarrinho':
       state.carrinho = state.carrinho.filter(carrinho => carrinho !== rest.carrinho)
       return state
+      case 'limparCarrinho':
+        state.carrinho = []
+        return state
     default:
       return state
   }
