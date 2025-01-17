@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, updateState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import {
@@ -27,22 +27,26 @@ import {
   CFormInput, CInputGroup, CInputGroupText
 } from '@coreui/react'
 
-import avatar2 from '../../assets/images/avatars/2.jpg'
-import avatar3 from '../../assets/images/avatars/3.jpg'
-import avatar4 from '../../assets/images/avatars/4.jpg'
-import avatar5 from '../../assets/images/avatars/5.jpg'
+
 import carrinhoIcon from '../../assets/images/avatars/1.jpg'
 
 import ListaCompras from '../produtos/listaProdutos/ListaCompras'
 
 const Carrinho = () => {
-  const dispatch = useDispatch()
   const carrinho = useSelector((state) => state.carrinho)
   const [visible, setVisible] = useState(false)
+  const [cont, setCont] = useState(0)
 
+
+  useEffect(() => {
+    setCont(carrinho.length)
+  }, [carrinho]);
+
+ 
   return (
     <>
       <CDropdown variant="nav-item">
+        <CCardText style={{position:'absolute', color:'red', marginLeft:3, paddingTop:20}}>{cont > 0 ? cont : ''}</CCardText>
         <CDropdownToggle placement="bottom-end" className="py-0 pe-0" caret={false}>
           <CAvatar src={carrinhoIcon} size="md" onClick={() => setVisible(true)} />
         </CDropdownToggle>
@@ -55,7 +59,7 @@ const Carrinho = () => {
         </COffcanvasHeader>
         <COffcanvasBody>
 
-          <ListaCompras carrinho={carrinho} />
+          <ListaCompras />
 
 
           <CContainer style={{ paddingRight: 3, paddingLeft: 5, paddingTop: 50, paddingBottom: 30 }} >

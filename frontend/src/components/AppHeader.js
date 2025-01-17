@@ -33,6 +33,7 @@ const AppHeader = () => {
 
   const dispatch = useDispatch()
   const sidebarShow = useSelector((state) => state.sidebarShow)
+  const carrinho = useSelector((state) => state.carrinho)
 
   useEffect(() => {
     document.addEventListener('scroll', () => {
@@ -40,6 +41,10 @@ const AppHeader = () => {
         headerRef.current.classList.toggle('shadow-sm', document.documentElement.scrollTop > 0)
     })
   }, [])
+
+  useEffect(() => {
+    console.log(carrinho.length)
+  }, [carrinho.length]);
 
   return (
     <CHeader position="sticky" className="mb-4 p-0" ref={headerRef}>

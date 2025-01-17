@@ -29,6 +29,11 @@ import { produtos } from '../../services/ListaProdutos'
 const renderPerson = (produtos, idx) => {
   const dispatch = useDispatch()
   const carrinho = useSelector((state) => state.carrinho)
+
+const  addProdutoCarrinho = (descricao) => {    
+  dispatch({ type: 'addCarrinho', carrinho: produtos })
+}
+
   return (
     <CCol style={{ paddingTop: 10, paddingBottom: 10 }}>
     <CCard>
@@ -40,8 +45,8 @@ const renderPerson = (produtos, idx) => {
       </CCardBody>
       <CCardFooter>
         <CRow xs={{ cols: 2 }}>
-          <CCol>{VerticallyCentered(produtos.descricao, produtos.detalhes)}</CCol>
-          <CCol><CButton color="primary" onClick={() => dispatch({ type: 'addCarrinho', carrinho: produtos })}>Comprar</CButton></CCol>
+          <CCol>{VerticallyCentered(produtos.descricao, produtos.detalhes, addProdutoCarrinho)}</CCol>
+          <CCol><CButton color="primary" onClick={addProdutoCarrinho}>Comprar</CButton></CCol>
         </CRow>
       </CCardFooter>
     </CCard>

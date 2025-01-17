@@ -2,7 +2,7 @@ import { legacy_createStore as createStore } from 'redux'
 
 const initialState = {
   detalhesShow: false,
-  carrinho: [ ],
+  carrinho: [],
   sidebarShow: true,
   theme: 'light',
 }
@@ -13,6 +13,10 @@ const changeState = (state = initialState, { type, ...rest }) => {
       return { ...state, ...rest }
     case 'addCarrinho':
       state.carrinho = [...state.carrinho, rest.carrinho]
+      return state
+    case 'removeCarrinho':
+      state.carrinho = state.carrinho.filter(carrinho => carrinho !== rest.carrinho)
+      return state
     default:
       return state
   }

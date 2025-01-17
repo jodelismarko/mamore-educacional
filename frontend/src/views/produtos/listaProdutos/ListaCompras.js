@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react'
 import FlatList from 'flatlist-react';
+import { useSelector, useDispatch } from 'react-redux'
 
 import {
     CCardSubtitle,
@@ -14,13 +15,13 @@ import {
     CFormInput, CInputGroup, 
 } from '@coreui/react'
 
-const renderPerson = (carrinho) => {
+const renderPerson = (carrinho, removeProdutoCarrinho,reset) => {
     return (
         <CContainer style={{ padding: 5 }}>
             <CCard >
                 <CRow className="g-0">
                     <CContainer style={{ position: 'absolute', background: '#5856d6', width: 5, right: 0, marginTop: -10, marginRight: -10, borderRadius: 15 }}>
-                        <CCardText style={{ marginLeft: -4, color: '#FFFFFF' }}>X</CCardText>
+                        <CCardText onClick={()=> removeProdutoCarrinho(carrinho)} style={{ marginLeft: -4, color: '#FFFFFF' }}>X</CCardText>
                     </CContainer>
                     <CCol md={2} style={{alignContent:'center', paddingLeft:5}}>
                         <CCardImage src={carrinho.capa} />
@@ -49,11 +50,28 @@ const renderPerson = (carrinho) => {
     );
 }
 
-const ListaCompras = (props) => {
+const ListaCompras = () => {
+    const dispatch = useDispatch()
+    const carrinho = useSelector((state) => state.carrinho)
+    const [seed, setSeed] = useState(1);
+
+    const reset = () => {
+        setSeed(Math.random());
+    }
+
+    useEffect(() => {
+        console.log('Quantidade de produtos no carrinho mudou')
+      }, [carrinho]);
+
+    const removeProdutoCarrinho = (carrinho) => {
+        console.log(carrinho)
+        dispatch({ type: 'removeCarrinho', carrinho: carrinho })
+    }
+
     return (
         <FlatList
-            list={props.carrinho}
-            renderItem={renderPerson}
+            list={carrinho}
+            renderItem={(item,k) => renderPerson(item, removeProdutoCarrinho)}
             renderWhenEmpty={() => <div>Você ainda não adicionou produtos no seu carrinho.</div>}
         />
 
