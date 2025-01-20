@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ImageGallery from 'react-image-gallery';
+import { useSelector, useDispatch } from 'react-redux'
 
 import {
   CModalFooter,
@@ -13,19 +14,24 @@ import {
 
 
 const VerticallyCentered = (descricao, detalhes, addProdutoCarrinho) => {
+  const dispatch = useDispatch()
   const [visible, setVisible] = useState(false)
+  const caunt = useSelector((state) => state.caunt)
 
   return (
     <>
-      <CRow style={{margin:0,padding:0, width:'128%', paddingBottom:2}}>
+      <CRow style={{margin:0,padding:0, width:'135%', paddingBottom:2}}>
         <CCol xs={10} style={{margin:0,padding:0, paddingLeft:2, paddingRight:2}}>
           <CButton color="primary" onClick={() => setVisible(!visible)} style={{width:'100%'}} >
             Detalhes
           </CButton>
         </CCol>
         <CCol xs={1} style={{margin:0,padding:0}}>
-          <CButton color="primary" onClick={() => addProdutoCarrinho()}>
-            +
+          <CButton color="primary" onClick={() => {
+              dispatch({ type: 'set', caunt: caunt + 1 }),
+              addProdutoCarrinho()
+            }}
+>            +
           </CButton>
         </CCol>
       </CRow>
@@ -41,8 +47,9 @@ const VerticallyCentered = (descricao, detalhes, addProdutoCarrinho) => {
         <CModalFooter>
           <CButton
             onClick={() => {
-              setVisible(!visible),
-              addProdutoCarrinho()
+              dispatch({ type: 'set', caunt: caunt + 1 }),
+              addProdutoCarrinho(),
+              setVisible(!visible)
             }
             } color="primary">Comprar</CButton>
         </CModalFooter>

@@ -354,5 +354,40 @@ export const produtos = [
                 original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
               }
         ]
+    },
+    {
+        nome: 'Ultimo produto', 
+        codigo: 'ma215', 
+        descricao: 'Descrição do Ultimo produto',
+        capa: 'https://primefaces.org/cdn/primereact/images/galleria/galleria10.jpg',
+        detalhes:[
+            {
+                original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
+              },
+              {
+                original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
+              },
+              {
+                original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
+              },
+              {
+                original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
+              },
+              {
+                original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
+              },
+              {
+                original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
+              },
+              {
+                original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
+              },
+              {
+                original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
+              },
+              {
+                original: 'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
+              }
+        ]
     }
 ]

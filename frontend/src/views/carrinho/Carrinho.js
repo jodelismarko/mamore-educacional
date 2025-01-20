@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import {
@@ -27,10 +27,8 @@ import ListaCompras from '../produtos/listaProdutos/ListaCompras'
 
 const Carrinho = () => {
   const dispatch = useDispatch()
-  const [caunt, setCaunt] = useState(0)
   const [visible, setVisible] = useState(false)
-  const carrinho = useSelector((state) => state.carrinho)
-
+  const caunt = useSelector((state) => state.caunt)
 
   const limparCarrinho = () => {
     dispatch({ type: 'limparCarrinho' })
@@ -40,7 +38,7 @@ const Carrinho = () => {
   return (
     <>
       <CDropdown variant="nav-item">
-        <CCardText style={{ position: 'absolute', color: 'red', marginLeft: 3, paddingTop: 20, zIndex: 100 }}>{carrinho.length > 0 ? carrinho.length : ''}</CCardText>
+        <CCardText style={{ position: 'absolute', color: 'red', marginLeft: 3, paddingTop: 20, zIndex: 100 }}>{caunt > 0 ? caunt : ''}</CCardText>
         <CDropdownToggle placement="bottom-end" className="py-0 pe-0" caret={false}>
           <CAvatar src={carrinhoIcon} size="md" onClick={() => setVisible(true)} />
         </CDropdownToggle>

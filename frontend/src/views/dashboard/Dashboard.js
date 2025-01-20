@@ -50,7 +50,7 @@ const Colors = () => {
           <CCardHeader>
             <strong>Lista de produtos</strong>
           </CCardHeader>
-          <CRow xs={{ cols: 1 }} sm={{ cols: 2 }} md={{ cols: 5 }} style={{ paddingTop: 30, paddingBottom: 50, paddingLeft: 10, paddingRight: 10 }}>
+          <CRow xs={{ cols: 1 }} sm={{ cols: 2 }} md={{ cols: 3 }} style={{ paddingTop: 30, paddingBottom: 50, paddingLeft: 10, paddingRight: 10 }}>
             <FlatList
               list={produtos}
               renderItem={renderPerson}

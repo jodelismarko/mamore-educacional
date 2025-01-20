@@ -11,10 +11,8 @@ const initialState = {
 const changeState = (state = initialState, { type, ...rest }) => {
   switch (type) {
     case 'set':
+      console.log("adicionando produto no carrinho")
       return { ...state, ...rest }
-      case 'setCaunt':
-        state.caunt = state.caunt + 1
-        return state
     case 'addCarrinho':
       console.log("adicionando um novo elemento no carrinho")
       state.carrinho = [...state.carrinho, rest.carrinho]
