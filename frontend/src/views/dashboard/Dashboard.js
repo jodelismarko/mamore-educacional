@@ -22,7 +22,7 @@ const renderPerson = (produtosCarrinho) => {
   const dispatch = useDispatch()
 
   const addProdutoCarrinho = () => {
-    dispatch({ type: 'addCarrinho', carrinho: produtosCarrinho })
+    dispatch({ type: 'addCarrinho', carrinho: {...produtosCarrinho, qtde:1} })
   }
 
   return (

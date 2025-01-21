@@ -1,9 +1,11 @@
 import { legacy_createStore as createStore } from 'redux'
 
 const initialState = {
+  teste: false,
   detalhesShow: false,
-  caunt:0,
-  carrinho: [],
+  caunt: 0,
+  carrinho: [
+  ],
   sidebarShow: true,
   theme: 'light',
 }
@@ -11,18 +13,25 @@ const initialState = {
 const changeState = (state = initialState, { type, ...rest }) => {
   switch (type) {
     case 'set':
-      console.log("adicionando produto no carrinho")
       return { ...state, ...rest }
     case 'addCarrinho':
-      console.log("adicionando um novo elemento no carrinho")
       state.carrinho = [...state.carrinho, rest.carrinho]
+      return state
+    case 'addQtdeCarrinho':
+      console.log("adicionando quantidade produto no carrinho")
+      state.carrinho.filter(carrinho => carrinho == rest.produtoQuantidade).lastItem.qtde = state.carrinho.filter(carrinho => carrinho == rest.produtoQuantidade).lastItem.qtde + 1
+      return state
+    case 'removeQtdeCarrinho':
+      console.log("adicionando quantidade produto no carrinho")
+      state.carrinho.filter(carrinho => carrinho == rest.produtoQuantidade).lastItem.qtde = state.carrinho.filter(carrinho => carrinho == rest.produtoQuantidade).lastItem.qtde - 1
       return state
     case 'removeCarrinho':
       state.carrinho = state.carrinho.filter(carrinho => carrinho !== rest.carrinho)
       return state
-      case 'limparCarrinho':
-        state.carrinho = []
-        return state
+    case 'limparCarrinho':
+      state.caunt = 0
+      state.carrinho = []
+      return state
     default:
       return state
   }
