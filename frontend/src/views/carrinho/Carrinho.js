@@ -20,9 +20,9 @@ import {
   CFormInput, CInputGroup, CInputGroupText
 } from '@coreui/react'
 
+import { ContactUs } from '../../services/email/email'
 
 import carrinhoIcon from '../../assets/images/avatars/1.jpg'
-
 import ListaCompras from '../produtos/listaProdutos/ListaCompras'
 
 const Carrinho = () => {
@@ -33,7 +33,6 @@ const Carrinho = () => {
   const limparCarrinho = () => {
     dispatch({ type: 'limparCarrinho' })
   }
-
 
   return (
     <>
@@ -50,39 +49,8 @@ const Carrinho = () => {
           <CCloseButton className="text-reset" onClick={() => setVisible(false)} />
         </COffcanvasHeader>
         <COffcanvasBody>
-
           <ListaCompras />
-
-          <div style={{ margin: -20, padding: 0, paddingTop: 50, paddingBottom: 30 }} >
-            <CForm className="row gy-2 gx-3 align-items-center" style={{ margin: 0, padding: 0 }}>
-              <CCol sm={8}>
-                <CFormLabel className="visually-hidden" htmlFor="autoSizingInput">
-                  Nome
-                </CFormLabel>
-                <CFormInput id="autoSizingInput" placeholder="Nome Completo" />
-              </CCol>
-              <CCol sm={4}>
-                <CFormLabel className="visually-hidden" htmlFor="autoSizingInput">
-                  Telefone
-                </CFormLabel>
-                <CFormInput id="autoSizingInput" placeholder="(xx) xxxx-xxxx" />
-              </CCol>
-              <CCol sm={12}>
-                <CFormLabel className="visually-hidden" htmlFor="autoSizingInputGroup">
-                  E-mail
-                </CFormLabel>
-                <CInputGroup>
-                  <CInputGroupText>@</CInputGroupText>
-                  <CFormInput id="autoSizingInputGroup" placeholder="E-mail" />
-                </CInputGroup>
-              </CCol>
-            </CForm>
-          </div>
-          <CContainer style={{ width: '80%' }}>
-            <CRow>
-              <CButton onClick={() => {setVisible(false), limparCarrinho()}} color="primary" type="submit">Solicitar Or&ccedil;amento</CButton>
-            </CRow>
-          </CContainer>
+          <ContactUs/>
         </COffcanvasBody>
       </COffcanvas>
     </>
