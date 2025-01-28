@@ -32,7 +32,7 @@ export const ContactUs = () => {
         const form = event.currentTarget
         event.preventDefault();
         emailjs
-            .sendForm('service_l12aupq', 'template_djmjjer', form, {
+            .sendForm('service_l12aupq', 'template_anun2nm', form, {
                 publicKey: 'r4IV6L9kChtW_NLSW',
             })
             .then(
@@ -56,7 +56,7 @@ export const ContactUs = () => {
                         type="text"
                         placeholder="Nome Completo"
                         feedbackValid="Looks good!"
-                        name="to_name"
+                        name="cliente_nome"
                         required
                     />
                 </CCol>
@@ -65,7 +65,7 @@ export const ContactUs = () => {
                         mask="(00)0000-0000"
                         placeholder="Telefone"
                         feedbackValid="Looks good!"
-                        name="from_name"
+                        name="cliente_telefone"
                         required
                     />
                 </CCol>
@@ -91,11 +91,11 @@ export const ContactUs = () => {
                     />
                 </CCol>
                 <CCol xs={12}>
-                    {carrinho.map((item) => <CFormInput type="hidden" name="message" value={"Produto: " + item.nome + "; Quantidade: " + item.qtde} />)}
+                    {carrinho.map((item) => <CFormInput type="hidden" name="message" value={"Produto: " + item.nome + "\n Quantidade: " + item.qtde +"\n"} />)}
                 </CCol>
                 <CCol xs={12}>
                     <CButton color="primary" type="submit">
-                        Solicitar Orçamento
+                        Solicitar Or&ccedil;amento
                     </CButton>
                 </CCol>
             </CForm>
